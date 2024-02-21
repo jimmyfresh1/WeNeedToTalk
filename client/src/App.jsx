@@ -1,13 +1,14 @@
 import { useState } from "react";
-
+import Sidebar from "./components/Sidebar";
+import Chatbox from "./components/Chatbox";
 import "./App.css";
+import "./index.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <h1>Hello James</h1>
+      <Chatbox />
+      <div className="blocktest"></div>
     </>
   );
 }
