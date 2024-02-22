@@ -78,7 +78,7 @@ function App() {
           <div className="login aesthetic-modal">
             <div className="aesthetic-modal-title">
               <div className="aesthetic-title-text">
-                We Need To Talk By: James Fern
+                We Need To Talk By: Abisai Escobar and James Fern
               </div>
             </div>
             <div className="aesthetic-modal-content">
