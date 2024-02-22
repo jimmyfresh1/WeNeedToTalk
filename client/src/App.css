@@ -89,6 +89,7 @@ body {
 .header {
   background-color: rgb(43, 36, 43);
   grid-column: 1/6;
+  grid-row: 1/2;
 }
 
 .mainchat {
