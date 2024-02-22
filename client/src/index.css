@@ -6,11 +6,24 @@
   font-style: normal;
 }
 
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 5px #ffffff;
+  }
+  50% {
+    text-shadow: 0 0 15px #ff00ff;
+  }
+  100% {
+    text-shadow: 0 0 5px #ffffff;
+  }
+}
+
 .gradient {
   background: #45cfbd;
   background: linear-gradient(to right, #45cfbd 0%, #cf50c7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: pulse 10s infinite ease-in-out;
 }
 
 .syncopate-bold {

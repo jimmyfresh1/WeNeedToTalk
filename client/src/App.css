@@ -1,6 +1,7 @@
 body {
   margin: 0px;
   padding: 0px;
+  cursor: url(./assets/hotlineselect.png), all-scroll;
 }
 
 #root {
@@ -12,8 +13,17 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: rgb(214, 214, 168);
-  cursor: url(./assets/hotlinenormal.png), auto;
-  cursor: url(./assets/hotlinenormal.png), default;
+  cursor: url(./assets/hotlinenormal6.png), auto;
+  cursor: url(./assets/hotlinenormal6.png), default;
+}
+
+.icon {
+  height: 100px;
+  width: 80px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 .backgroundImage {
@@ -33,10 +43,14 @@ body {
   grid-template-columns: repeat(5, 20%);
   grid-template-rows: repeat(5, 20%);
   background-color: black;
+  border: rgb(86, 86, 86) solid 3px;
+  border-radius: 15px;
+  overflow: hidden;
+  opacity: 92%;
 }
 
 .header {
-  background-color: purple;
+  background-color: rgb(43, 36, 43);
   grid-column: 1/6;
 }
 
@@ -62,88 +76,33 @@ body {
 .logo img {
   height: 125px;
   width: 125px;
+  filter: drop-shadow(5px 5px 4px #3b92b4);
+}
+
+.logo2 h3 {
+  font-size: 50px;
+  color: white;
 }
 
 .sidebar {
   grid-column: 1/4;
   grid-row: 1/10;
-  background-color: aquamarine;
+  background-color: rgb(105, 105, 105);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
 }
 
 .chattext {
   grid-column: 4/11;
   grid-row: 1/10;
-  background-color: bisque;
+  background-color: rgb(58, 91, 80);
   overflow-y: scroll;
-  cursor: url(./assets/hotlinenormal.png), auto;
-  cursor: url(./assets/hotlinenormal.png), default;
+  cursor: url(./assets/hotlinenormal6.png), auto;
+  cursor: url(./assets/hotlinenormal6.png), default;
 }
 
-@keyframes flicker {
-  0% {
-    opacity: 0.1060974864;
-  }
-  5% {
-    opacity: 0.4021210987;
-  }
-  10% {
-    opacity: 0.1367465699;
-  }
-  15% {
-    opacity: 0.6512402162;
-  }
-  20% {
-    opacity: 0.4540128641;
-  }
-  25% {
-    opacity: 0.9271520673;
-  }
-  30% {
-    opacity: 0.0301955486;
-  }
-  35% {
-    opacity: 0.4994084338;
-  }
-  40% {
-    opacity: 0.4680770709;
-  }
-  45% {
-    opacity: 0.8199515165;
-  }
-  50% {
-    opacity: 0.3991167248;
-  }
-  55% {
-    opacity: 0.6350404123;
-  }
-  60% {
-    opacity: 0.8190455535;
-  }
-  65% {
-    opacity: 0.37051203;
-  }
-  70% {
-    opacity: 0.9739254071;
-  }
-  75% {
-    opacity: 0.2353893052;
-  }
-  80% {
-    opacity: 0.8412472095;
-  }
-  85% {
-    opacity: 0.8461613895;
-  }
-  90% {
-    opacity: 0.4375249742;
-  }
-  95% {
-    opacity: 0.3716479501;
-  }
-  100% {
-    opacity: 0.8975441208;
-  }
-}
 .aesthetic-effect-crt {
   display: inline-block;
   position: relative;
@@ -151,22 +110,10 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  cursor: url(./assets/hotlinenormal.png), auto;
-  cursor: url(./assets/hotlinenormal.png), default;
+  cursor: url(./assets/hotlinenormal6.png), auto;
+  cursor: url(./assets/hotlinenormal6.png), default;
 }
-.aesthetic-effect-crt::after {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  opacity: 0;
-  z-index: 2;
-  pointer-events: none;
-  animation: flicker 0.15s infinite;
-}
+
 .aesthetic-effect-crt::before {
   content: " ";
   display: block;
@@ -175,7 +122,10 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+  background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%,
+      rgba(205, 205, 205, 0.25) 50%
+    ),
     linear-gradient(
       90deg,
       rgba(255, 0, 0, 0.06),
@@ -187,4 +137,37 @@ body {
     100% 2px,
     3px 100%;
   pointer-events: none;
+}
+
+.chatbubblecontainer {
+  margin: 15px;
+}
+.chatbubble {
+  max-width: 50%;
+  border: solid black 1px;
+  background-color: aliceblue;
+  border-radius: 15%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.username {
+  height: 50px;
+  font-size: 30px;
+  /* text-align: left; */
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  background-color: rgb(205, 154, 154);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-shadow: rgb(255, 146, 146) 3px 3px 3px;
+}
+
+.message-body {
+  padding: 20px;
+  word-wrap: break-word;
+  font-family: arial;
+  text-align: justify;
+  font-size: 20px;
+  font-weight: 400px;
+  text-shadow: rgb(255, 146, 146) 2px 2px 2px;
 }

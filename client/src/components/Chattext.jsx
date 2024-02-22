@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react";
 const arrayText = [
-  "text",
+  "textxxxxxxxxxxxxdddddddddddddddddxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+
   "text",
   "text",
   "text",
@@ -88,8 +89,13 @@ const Chattext = () => {
     <div className="chattext">
       {arrayText.map((item, index) => {
         return (
-          <div>
-            This is a div #{index + 1} {item}{" "}
+          <div className="chatbubblecontainer">
+            <div className="chatbubble">
+              <div className="username">TheChaospower</div>
+              <div className="message-body">
+                {index + 1} {item}
+              </div>
+            </div>
           </div>
         );
       })}
