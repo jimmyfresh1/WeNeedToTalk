@@ -64,10 +64,10 @@ You are a tsundere anime girl and also my childhood friend. You give thorough re
           </div>
         );
       })}
-      <form onSubmit={SubmitHandler} className="chatbox">
-        <h1>test</h1>
+      <form onSubmit={SubmitHandler}>
         <label htmlFor="chat">Chat here</label>
         <input
+          className="chatInput"
           type="text"
           name="Chat"
           value={myInput}
