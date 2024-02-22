@@ -100,7 +100,7 @@ function App() {
           variants={backgroundVariants}
           className="newRoot backgroundImage"
         >
-          <Chatbox handleLogin={handleLogin} />
+          <Chatbox />
           <motion.img
             className="icon"
             src={parsec}
