@@ -12,13 +12,23 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: rgb(214, 214, 168);
+  cursor: url(./assets/hotlinenormal.png), auto;
+  cursor: url(./assets/hotlinenormal.png), default;
+}
+
+.backgroundImage {
+  background-image: url("./assets/pc98.gif"); /* Adjust the path as needed */
+  height: 100vh; /* Or whatever fits your design */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; /* Or 'contain' depending on what you need */
 }
 
 .chatbox {
-  grid-column-start: 5;
-  grid-column-end: 20;
+  grid-column-start: 6;
+  grid-column-end: 19;
   grid-row-start: 4;
-  grid-row-end: 20;
+  grid-row-end: 18;
   display: grid;
   grid-template-columns: repeat(5, 20%);
   grid-template-rows: repeat(5, 20%);
@@ -64,4 +74,117 @@ body {
   grid-column: 4/11;
   grid-row: 1/10;
   background-color: bisque;
+  overflow-y: scroll;
+  cursor: url(./assets/hotlinenormal.png), auto;
+  cursor: url(./assets/hotlinenormal.png), default;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.1060974864;
+  }
+  5% {
+    opacity: 0.4021210987;
+  }
+  10% {
+    opacity: 0.1367465699;
+  }
+  15% {
+    opacity: 0.6512402162;
+  }
+  20% {
+    opacity: 0.4540128641;
+  }
+  25% {
+    opacity: 0.9271520673;
+  }
+  30% {
+    opacity: 0.0301955486;
+  }
+  35% {
+    opacity: 0.4994084338;
+  }
+  40% {
+    opacity: 0.4680770709;
+  }
+  45% {
+    opacity: 0.8199515165;
+  }
+  50% {
+    opacity: 0.3991167248;
+  }
+  55% {
+    opacity: 0.6350404123;
+  }
+  60% {
+    opacity: 0.8190455535;
+  }
+  65% {
+    opacity: 0.37051203;
+  }
+  70% {
+    opacity: 0.9739254071;
+  }
+  75% {
+    opacity: 0.2353893052;
+  }
+  80% {
+    opacity: 0.8412472095;
+  }
+  85% {
+    opacity: 0.8461613895;
+  }
+  90% {
+    opacity: 0.4375249742;
+  }
+  95% {
+    opacity: 0.3716479501;
+  }
+  100% {
+    opacity: 0.8975441208;
+  }
+}
+.aesthetic-effect-crt {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: url(./assets/hotlinenormal.png), auto;
+  cursor: url(./assets/hotlinenormal.png), default;
+}
+.aesthetic-effect-crt::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+}
+.aesthetic-effect-crt::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.06),
+      rgba(0, 255, 0, 0.02),
+      rgba(0, 0, 255, 0.06)
+    );
+  z-index: 2;
+  background-size:
+    100% 2px,
+    3px 100%;
+  pointer-events: none;
 }
