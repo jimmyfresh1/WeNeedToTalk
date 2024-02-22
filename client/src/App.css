@@ -5,6 +5,11 @@ body {
 }
 
 #root {
+  cursor: url(./assets/hotlinenormal6.png), auto;
+  cursor: url(./assets/hotlinenormal6.png), default;
+}
+
+.newRoot {
   margin: 0 auto;
   text-align: center;
   display: grid;
@@ -12,9 +17,18 @@ body {
   grid-template-rows: repeat(20, 5%);
   width: 100vw;
   height: 100vh;
-  background-color: rgb(214, 214, 168);
-  cursor: url(./assets/hotlinenormal6.png), auto;
-  cursor: url(./assets/hotlinenormal6.png), default;
+}
+
+.initial {
+  background-color: black;
+}
+
+.modal-button {
+  margin-top: 50px;
+  height: 35px;
+  width: 100px;
+  background-color: rgb(226, 226, 226);
+  cursor: url(./assets/hotlineselect.png), all-scroll;
 }
 
 .icon {
@@ -26,12 +40,35 @@ body {
   grid-row-end: 3;
 }
 
+.icon2 {
+  height: 100px;
+  width: 80px;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  cursor: url(./assets/select.png), pointer;
+}
+
 .backgroundImage {
   background-image: url("./assets/pc98.gif"); /* Adjust the path as needed */
   height: 100vh; /* Or whatever fits your design */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; /* Or 'contain' depending on what you need */
+}
+
+.loginBackground {
+  background-image: url("./assets/lakeside.png"); /* Adjust the path as needed */
+  height: 100vh; /* Or whatever fits your design */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; /* Or 'contain' depending on what you need */
+}
+
+.login {
+  grid-column: 8/13;
+  grid-row: 8/13;
 }
 
 .chatbox {
@@ -170,4 +207,73 @@ body {
   font-size: 20px;
   font-weight: 400px;
   text-shadow: rgb(255, 146, 146) 2px 2px 2px;
+}
+
+.aesthetic-modal {
+  border: 1px solid;
+  box-shadow: 1px 1px 0 0 #000;
+  border-top: 1px solid #dfdfdf;
+  border-left: 1px solid #dfdfdf;
+  display: block;
+  background-color: #bfbfbf;
+  padding: 4px;
+}
+
+.aesthetic-modal-title {
+  border: 1px solid;
+  box-shadow: 1px 1px 0 0 #000;
+  border-top: 1px solid #dfdfdf;
+  border-left: 1px solid #dfdfdf;
+  text-align: left;
+  background: #000084;
+  outline: 0;
+  padding-left: 4px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 4px;
+  height: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.aesthetic-title-text {
+  color: #fff;
+  font-size: 12px;
+}
+
+.aesthetic-modal-content {
+  padding-top: 15px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.modal-form {
+  height: 20px;
+}
+.modal-form button {
+  margin-right: 58px;
+  margin-top: 10px;
+  height: 30px;
+  width: 100px;
+  background-color: rgb(141, 194, 176);
+  cursor: url(./assets/hotlineselect.png), all-scroll;
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pop-in {
+  animation: pop-in 0.5s forwards;
 }
