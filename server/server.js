@@ -25,7 +25,9 @@ app.post("/chat", async (req, res) => {
       model: "gpt-3.5-turbo-0125",
       messages: messages,
       max_tokens: 60,
-      temperature: 0.4,
+      temperature: 1.2,
+      frequency_penalty: 1.1,
+      presence_penalty: 1.1,
     });
 
     //below is just pipeline stuff for langsmith to run traces

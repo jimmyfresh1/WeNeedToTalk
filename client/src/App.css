@@ -160,7 +160,7 @@ body {
   right: 0;
   background: linear-gradient(
       rgba(18, 16, 16, 0) 50%,
-      rgba(205, 205, 205, 0.25) 50%
+      rgba(154, 154, 154, 0.25) 50%
     ),
     linear-gradient(
       90deg,
@@ -198,8 +198,8 @@ body {
 }
 
 .username {
-  height: 3em;
-  font-size: 1.5em;
+  height: 2em;
+  font-size: 2em;
   /* text-align: left; */
   font-weight: 700;
   color: rgb(0, 0, 0);
