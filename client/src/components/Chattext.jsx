@@ -63,7 +63,7 @@ const Chattext = () => {
           />
         );
       })}
-      <form onSubmit={SubmitHandler}>
+      <form autocomplete="off" onSubmit={SubmitHandler}>
         <label className="chatLabel pixelify-sans" htmlFor="chat">
           Chat here
         </label>
