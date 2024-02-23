@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { tsunderePrompt } from "../services/prompts";
@@ -7,8 +6,14 @@ import useMessageList from "../hooks/useMessageList";
 import { sendMessage } from "../services/OpenAICall";
 import ChatBubble from "./Chatbubble";
 import { tsunderePrepopulation } from "../services/prompts";
+import imsend from "../assets/imsend.mp3";
+import imreceive from "../assets/imreceive.mp3";
 
 const Chattext = () => {
+  const imSend = new Audio(imsend);
+  imSend.volume = 0.3;
+  const imReceive = new Audio(imreceive);
+  imReceive.volume = 0.2;
   const { messages, addMessage } = useMessageList([tsunderePrompt]);
   const [myInput, setMyInput] = useState("");
   const [response, setResponse] = useState("");
@@ -18,6 +23,7 @@ const Chattext = () => {
     const newUserMessage = { role: "user", content: myInput };
     addMessage(newUserMessage);
     form.preventDefault();
+    imSend.play();
     sendMessage(messages)
       .then((res) => {
         const newAssistantMessage = {
@@ -25,6 +31,7 @@ const Chattext = () => {
           content: res.response,
         };
         addMessage(newAssistantMessage);
+        imReceive.play();
         setResponse(newAssistantMessage.content);
       })
       .catch((err) => {
