@@ -28,6 +28,7 @@ app.post("/chat", async (req, res) => {
       temperature: 1.2,
       frequency_penalty: 1.1,
       presence_penalty: 1.1,
+      n: 1,
     });
 
     //below is just pipeline stuff for langsmith to run traces

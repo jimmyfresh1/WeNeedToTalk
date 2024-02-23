@@ -8,6 +8,7 @@ import ChatBubble from "./Chatbubble";
 import { tsunderePrepopulation } from "../services/prompts";
 import imsend from "../assets/imsend.mp3";
 import imreceive from "../assets/imreceive.mp3";
+import send from "../assets/send.png";
 
 const Chattext = () => {
   const autoscroll = () => {
@@ -63,7 +64,9 @@ const Chattext = () => {
         );
       })}
       <form onSubmit={SubmitHandler}>
-        <label htmlFor="chat">Chat here</label>
+        <label className="chatLabel pixelify-sans" htmlFor="chat">
+          Chat here
+        </label>
         <input
           className="chatInput"
           type="text"
@@ -71,7 +74,12 @@ const Chattext = () => {
           value={myInput}
           onChange={(e) => setMyInput(e.target.value)}
         />
-        <button type="submit">Submit</button>
+        <input
+          type="image"
+          src={send}
+          alt="Submit Form"
+          className="inputImage"
+        />
       </form>
     </div>
   );
