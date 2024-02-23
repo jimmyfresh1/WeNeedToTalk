@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { tsunderePrompt } from "../services/prompts";
 import useMessageList from "../hooks/useMessageList";
 import { sendMessage } from "../services/OpenAICall";
+import ChatBubble from "./Chatbubble";
+import { tsunderePrepopulation } from "../services/prompts";
 
 const Chattext = () => {
   const { messages, addMessage } = useMessageList([tsunderePrompt]);
@@ -34,14 +36,17 @@ const Chattext = () => {
 
   return (
     <div className="chattext">
+      {tsunderePrepopulation()}
       {messages.slice(1).map((message, index) => {
         return (
-          <div key={index} className="chatbubblecontainer">
-            <div className="chatbubble">
-              <div className="username">TheChaospower</div>
-              <div className="message-body">{message.content}</div>
-            </div>
-          </div>
+          <ChatBubble
+            role={message.role}
+            key={index}
+            username={
+              message.role === "user" ? "TheChaospower" : "Material Girl"
+            }
+            message={message.content}
+          />
         );
       })}
       <form onSubmit={SubmitHandler}>

@@ -24,6 +24,7 @@ app.post("/chat", async (req, res) => {
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo-0125",
       messages: messages,
+      max_tokens: 50,
     });
 
     //below is just pipeline stuff for langsmith to run traces
