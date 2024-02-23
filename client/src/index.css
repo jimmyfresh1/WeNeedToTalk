@@ -38,7 +38,7 @@
   font-style: normal;
 }
 .aesthetic-modal-content label {
-  font-size: 20px;
+  font-size: 1.5em;
   font-family: "Syncopate";
 }
 .aesthetic-title-text {
@@ -47,4 +47,10 @@
 
 .modal-form {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.chatLabel {
+  font-size: 2em;
+  color: rgb(236, 236, 236);
+  text-shadow: 2px 2px 2px rgb(54, 65, 219);
 }
