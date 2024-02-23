@@ -11,21 +11,22 @@ import imreceive from "../assets/imreceive.mp3";
 import send from "../assets/send.png";
 
 const Chattext = () => {
-  const autoscroll = () => {
+  const { messages, addMessage } = useMessageList([tsunderePrompt]);
+
+  useEffect(() => {
     const elem = document.getElementById("chatscroll");
     elem.scrollTop = elem.scrollHeight;
-  };
+  }, [messages]);
+
   const imSend = new Audio(imsend);
   imSend.volume = 0.3;
   const imReceive = new Audio(imreceive);
   imReceive.volume = 0.2;
-  const { messages, addMessage } = useMessageList([tsunderePrompt]);
   const [myInput, setMyInput] = useState("");
   const [response, setResponse] = useState("");
   const [error, setError] = useState("");
 
   const SubmitHandler = (form) => {
-    autoscroll();
     const newUserMessage = { role: "user", content: myInput };
     addMessage(newUserMessage);
     form.preventDefault();
@@ -39,7 +40,6 @@ const Chattext = () => {
         addMessage(newAssistantMessage);
         imReceive.play();
         setResponse(newAssistantMessage.content);
-        autoscroll();
       })
       .catch((err) => {
         console.log(err);
