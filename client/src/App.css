@@ -89,6 +89,7 @@ body {
 .header {
   background-color: rgb(43, 36, 43);
   grid-column: 1/6;
+  grid-row: 1/2;
 }
 
 .mainchat {
@@ -133,11 +134,14 @@ body {
 
 .chattext {
   grid-column: 4/11;
-  grid-row: 1/10;
   background-color: rgb(58, 91, 80);
   overflow-y: scroll;
   cursor: url(./assets/hotlinenormal6.png), auto;
   cursor: url(./assets/hotlinenormal6.png), default;
+}
+
+.chatInput {
+  grid-row: 8/10;
 }
 
 .aesthetic-effect-crt {
