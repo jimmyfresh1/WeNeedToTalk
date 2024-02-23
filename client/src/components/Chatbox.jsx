@@ -9,7 +9,7 @@ const Chatbox = () => {
       className="chatbox"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 4.3, duration: 0.2 }}
+      transition={{ delay: 4.2, duration: 0.2 }}
     >
       <Header />
       <Mainchat />

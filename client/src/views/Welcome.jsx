@@ -31,7 +31,7 @@ const Welcome = (props) => {
       animate={{ filter: "blur(0px)" }}
       transition={{ delay: 0.5, duration: 0.5 }}
     >
-      <div className="login aesthetic-modal">
+      <div className="login aesthetic-modal-2">
         <div className="aesthetic-modal-title">
           <div className="aesthetic-title-text">
             We Need To Talk By: Abisai Escobar and James Fern

@@ -24,16 +24,15 @@ body {
 }
 
 .modal-button {
-  margin-top: 50px;
-  height: 35px;
-  width: 100px;
+  height: 2em;
+  width: 6em;
   background-color: rgb(226, 226, 226);
   cursor: url(./assets/hotlineselect.png), all-scroll;
 }
 
 .icon {
-  height: 100px;
-  width: 80px;
+  height: 6em;
+  width: 5em;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 2;
@@ -41,8 +40,8 @@ body {
 }
 
 .icon2 {
-  height: 100px;
-  width: 80px;
+  height: 6em;
+  width: 6em;
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 2;
@@ -90,6 +89,7 @@ body {
   background-color: rgb(43, 36, 43);
   grid-column: 1/6;
   grid-row: 1/2;
+  overflow: hidden;
 }
 
 .mainchat {
@@ -106,19 +106,18 @@ body {
 }
 
 .logo h1 {
-  margin-top: 40px;
-  font-size: 45px;
+  font-size: 3em;
   filter: drop-shadow(4px 4px #e20398);
 }
 
 .logo img {
-  height: 125px;
-  width: 125px;
+  height: 7.5em;
+  width: 7.5em;
   filter: drop-shadow(5px 5px 4px #3b92b4);
 }
 
 .logo2 h3 {
-  font-size: 50px;
+  font-size: 3em;
   color: white;
 }
 
@@ -199,8 +198,8 @@ body {
 }
 
 .username {
-  height: 50px;
-  font-size: 20px;
+  height: 3em;
+  font-size: 1.5em;
   /* text-align: left; */
   font-weight: 700;
   color: rgb(0, 0, 0);
@@ -210,12 +209,12 @@ body {
 }
 
 .message-body {
-  padding: 20px;
+  padding: 1.5em;
   word-wrap: break-word;
   font-family: arial;
   text-align: justify;
-  font-size: 20px;
-  font-weight: 400px;
+  font-size: 1.5em;
+  font-weight: 400;
   text-shadow: rgb(255, 146, 146) 2px 2px 2px;
 }
 
@@ -224,9 +223,19 @@ body {
   box-shadow: 1px 1px 0 0 #000;
   border-top: 1px solid #dfdfdf;
   border-left: 1px solid #dfdfdf;
-  display: block;
   background-color: #bfbfbf;
   padding: 4px;
+  height: 16rem;
+}
+
+.aesthetic-modal-2 {
+  border: 1px solid;
+  box-shadow: 1px 1px 0 0 #000;
+  border-top: 1px solid #dfdfdf;
+  border-left: 1px solid #dfdfdf;
+  background-color: #bfbfbf;
+  padding: 4px;
+  height: 9rem;
 }
 
 .aesthetic-modal-title {
@@ -241,7 +250,6 @@ body {
   padding-top: 0px;
   padding-bottom: 0px;
   padding-right: 4px;
-  height: 24px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -251,24 +259,20 @@ body {
 
 .aesthetic-title-text {
   color: #fff;
-  font-size: 12px;
+  font-size: 1em;
 }
 
 .aesthetic-modal-content {
-  padding-top: 15px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  overflow: visible;
 }
 
 .modal-form {
-  height: 20px;
+  height: 1.5em;
 }
 .modal-form button {
-  margin-right: 58px;
-  margin-top: 10px;
-  height: 30px;
-  width: 100px;
+  margin-top: 1em;
+  height: 2em;
+  width: 6em;
   background-color: rgb(141, 194, 176);
   cursor: url(./assets/hotlineselect.png), all-scroll;
 }
