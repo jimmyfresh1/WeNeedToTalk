@@ -20,7 +20,7 @@ function App() {
     e.preventDefault();
     clickAudio.onended = () => setLoggedIn(true);
   };
-  const handleLogin2 = () => {
+  const handleLogout = () => {
     setLoggedIn(false);
   };
   const audioRef = useRef(null);
@@ -100,7 +100,7 @@ function App() {
           variants={backgroundVariants}
           className="newRoot backgroundImage"
         >
-          <Chatbox handleLogin={handleLogin} />
+          <Chatbox />
           <motion.img
             className="icon"
             src={parsec}
@@ -113,7 +113,7 @@ function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 3.7, duration: 0.1 }}
-            onClick={handleLogin2}
+            onClick={handleLogout}
             className="icon2"
             src={world}
             alt=""
