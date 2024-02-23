@@ -25,12 +25,12 @@ const tsunderePrepopulation = () => {
     <>
       <ChatBubble
         role="assistant"
-        username="Material Girl"
+        username="Material Girl95"
         message="Hey, are you listening to me? I've been trying to tell you something."
       />
       <ChatBubble
         role="assistant"
-        username="Material Girl"
+        username="MaterialGirl95"
         message="I'm really gonna be mad if you start taking me for granted you know!"
       />
       <ChatBubble
@@ -41,7 +41,7 @@ const tsunderePrepopulation = () => {
 
       <ChatBubble
         role="assistant"
-        username="Material Girl"
+        username="MaterialGirl95"
         message="Well... maybe just a little mad. As long as you start responding, I'll forgive you!"
       />
     </>

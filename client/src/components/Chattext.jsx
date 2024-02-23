@@ -57,7 +57,7 @@ const Chattext = () => {
             role={message.role}
             key={index}
             username={
-              message.role === "user" ? "TheChaospower" : "Material Girl"
+              message.role === "user" ? "TheChaospower" : "MaterialGirl95"
             }
             message={message.content}
           />
