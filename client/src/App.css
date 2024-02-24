@@ -50,19 +50,25 @@ body {
 }
 
 .backgroundImage {
-  background-image: url("./assets/pc98.gif"); /* Adjust the path as needed */
-  height: 100vh; /* Or whatever fits your design */
+  background-image: url("./assets/pc98.gif");
+  /* Adjust the path as needed */
+  height: 100vh;
+  /* Or whatever fits your design */
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; /* Or 'contain' depending on what you need */
+  background-size: cover;
+  /* Or 'contain' depending on what you need */
 }
 
 .loginBackground {
-  background-image: url("./assets/lakeside.png"); /* Adjust the path as needed */
-  height: 100vh; /* Or whatever fits your design */
+  background-image: url("./assets/lakeside.png");
+  /* Adjust the path as needed */
+  height: 100vh;
+  /* Or whatever fits your design */
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; /* Or 'contain' depending on what you need */
+  background-size: cover;
+  /* Or 'contain' depending on what you need */
 }
 
 .login {
@@ -117,6 +123,7 @@ body {
   border: none;
   appearance: none;
 }
+
 .chatInputButton {
   background: url(./assets/send.png);
   height: 1em;
@@ -181,16 +188,12 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  background: linear-gradient(
-      rgba(18, 16, 16, 0) 50%,
-      rgba(154, 154, 154, 0.25) 50%
-    ),
-    linear-gradient(
-      90deg,
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%,
+      rgba(154, 154, 154, 0.25) 50%),
+    linear-gradient(90deg,
       rgba(255, 0, 0, 0.06),
       rgba(0, 255, 0, 0.02),
-      rgba(0, 0, 255, 0.06)
-    );
+      rgba(0, 0, 255, 0.06));
   z-index: 2;
   background-size:
     100% 2px,
@@ -211,6 +214,7 @@ body {
   flex-direction: column;
   overflow: hidden;
 }
+
 .chatbubblecontainer .chatbubble.user {
   background-color: #d0e0f0;
 }
@@ -249,7 +253,17 @@ body {
   border-left: 1px solid #dfdfdf;
   background-color: #bfbfbf;
   padding: 4px;
-  height: 16rem;
+  height: 17rem;
+}
+
+.aesthetic-modal-registration {
+  border: 1px solid;
+  box-shadow: 1px 1px 0 0 #000;
+  border-top: 1px solid #dfdfdf;
+  border-left: 1px solid #dfdfdf;
+  background-color: #bfbfbf;
+  padding: 4px;
+  height: 20rem;
 }
 
 .aesthetic-modal-2 {
@@ -293,6 +307,7 @@ body {
 .modal-form {
   height: 1.5em;
 }
+
 .modal-form button {
   margin-top: 1em;
   height: 2em;
@@ -306,6 +321,7 @@ body {
     transform: scale(0);
     opacity: 0;
   }
+
   100% {
     transform: scale(1);
     opacity: 1;
