@@ -3,11 +3,9 @@
 body {
   margin: 0px;
   padding: 0px;
-  cursor: url(./assets/hotlineselect.png), all-scroll;
 }
 
 #root {
-  cursor: url(./assets/hotlinenormal6.png), auto;
   cursor: url(./assets/hotlinenormal6.png), default;
 }
 
@@ -35,11 +33,11 @@ body {
   grid-row-start: 4;
   grid-row-end: 17;
   display: grid;
-  grid-template-columns: repeat(5, 20%);
-  grid-template-rows: repeat(5, 20%);
+  grid-template-rows: repeat(5, 1fr);
   background-color: black;
   border: rgb(86, 86, 86) solid 3px;
   border-radius: 15px;
   overflow: hidden;
   opacity: 92%;
+  box-sizing: border-box;
 }

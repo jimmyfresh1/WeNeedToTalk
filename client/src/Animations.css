@@ -1,14 +1,15 @@
 @keyframes pulse {
   0% {
-    text-shadow: 0 0 5px #ffffff;
+    text-shadow: 0 0 3px #ecfbff;
   }
   50% {
-    text-shadow: 0 0 15px #ff00ff;
+    text-shadow: 0 0 7px #004cff;
   }
   100% {
-    text-shadow: 0 0 5px #ffffff;
+    text-shadow: 0 0 3px #edfbff;
   }
 }
+
 @keyframes pop-in {
   0% {
     transform: scale(0);
@@ -24,11 +25,23 @@
   animation: pop-in 0.5s forwards;
 }
 
-@keyframes marqueeTop {
+@keyframes scroll-left {
   0% {
-    top: 0%;
+    transform: translateX(60%);
   }
   100% {
-    top: -100%;
+    transform: translateX(-450%);
+  }
+}
+
+@keyframes blur {
+  0% {
+    -webkit-filter: blur(0px) drop-shadow(2px 2px 2px #fafeff);
+  }
+  50% {
+    -webkit-filter: blur(1px) drop-shadow(2px 2px 2px #3b92b4);
+  }
+  100% {
+    -webkit-filter: blur(0px) drop-shadow(2px 2px 2px #ffbeee);
   }
 }
