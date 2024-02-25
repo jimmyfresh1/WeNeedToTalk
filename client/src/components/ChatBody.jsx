@@ -1,6 +1,5 @@
 import React from "react";
 import ChatMain from "./ChatMain";
-
 import ChatSidebar from "./ChatSidebar";
 import { motion } from "framer-motion";
 

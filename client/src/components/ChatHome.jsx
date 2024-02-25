@@ -2,8 +2,8 @@ import React from "react";
 
 const ChatHome = () => {
   return (
-    <div className="chathome">
-      <h1 id="chat-home-top">We Missed You</h1>
+    <div className="chathome chatmain" id="chatscroll">
+      We Missed You
     </div>
   );
 };

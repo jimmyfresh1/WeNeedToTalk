@@ -15,7 +15,7 @@ import {
   tsunderePrepopulation,
   matrixPrompt,
   matrixPrepopulation,
-} from "../services/prompts";
+} from "../services/prompts.jsx";
 
 const CharacterSelect = () => {
   const { prompt, setPrompt } = useContext(PromptContext);

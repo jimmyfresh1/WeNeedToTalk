@@ -10,11 +10,7 @@ const ChatMain = () => {
     default:
       renderChatMain = <ChatHome />;
   }
-  return (
-    <div className="chatmain" id="chatscroll">
-      {renderChatMain}
-    </div>
-  );
+  return <>{renderChatMain}</>;
 };
 
 export default ChatMain;

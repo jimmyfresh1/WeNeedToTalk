@@ -2,9 +2,11 @@ import React from "react";
 import weNeedLogo from "../assets/welogo.png";
 
 const ChatHeader = () => {
+
+  };
   return (
     <div className="header">
-      <div className="logo">
+      <div className="logo" >
         <img src={weNeedLogo} className="logo" alt="chat logo" />
 
         <h1 className="syncopate-regular gradient">We Need To Talk</h1>

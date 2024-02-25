@@ -8,7 +8,13 @@ import click from "./assets/click2.mp3";
 
 import { AnimatePresence } from "framer-motion";
 import "./App.css";
-import "./index.css";
+import "./Aesthetic.css";
+import "./Animations.css";
+import "./Desktop.css";
+import "./Startup.css";
+import "./Chat.css";
+import "./Characters.css";
+
 const PromptContext = createContext();
 export { PromptContext };
 
