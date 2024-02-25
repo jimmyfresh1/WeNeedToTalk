@@ -1,6 +1,7 @@
 import React from "react";
 import Login from "../components/Login";
 import { motion } from "framer-motion";
+import CharacterSelect from "../components/CharacterSelect";
 
 const loginVariants = {
   initial: { opacity: 0, transition: { duration: 2 } },

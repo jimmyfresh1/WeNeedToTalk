@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Agdasima:wght@400;700&family=Akaya+Telivigala&family=Alumni+Sans+Inline+One:ital@0;1&family=Atomic+Age&family=Bahiana&family=Bahianita&family=Bangers&family=Big+Shoulders+Stencil+Text:wght@100..900&family=Bowlby+One&family=Castoro+Titling&family=Caveat:wght@400..700&family=Creepster&family=Cute+Font&family=Cutive+Mono&family=Dangrek&family=DynaPuff:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Federant&family=Frijole&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Gloria+Hallelujah&family=Graduate&family=Hi+Melody&family=Hubballi&family=IM+Fell+DW+Pica+SC&family=Labrada:ital,wght@0,100..900;1,100..900&family=Lancelot&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Lumanosimo&family=Maiden+Orange&family=Metal+Mania&family=Milonga&family=Mooli&family=Oswald:wght@200..700&family=Phudu:wght@300..900&family=Princess+Sofia&family=Shadows+Into+Light&family=Sofadi+One&family=Sonsie+One&family=Supermercado+One&family=Syncopate:wght@400;700&family=Tangerine:wght@400;700&family=Tilt+Neon&family=Tourney:ital,wght@0,100..900;1,100..900&family=Train+One&family=Uncial+Antiqua&family=Ysabeau:ital,wght@0,1..1000;1,1..1000&family=Zilla+Slab+Highlight:wght@400;700&display=swap");
+
 body {
   margin: 0px;
   padding: 0px;
@@ -71,10 +73,10 @@ body {
 }
 
 .chatbox {
-  grid-column-start: 6;
+  grid-column-start: 7;
   grid-column-end: 19;
   grid-row-start: 4;
-  grid-row-end: 18;
+  grid-row-end: 17;
   display: grid;
   grid-template-columns: repeat(5, 20%);
   grid-template-rows: repeat(5, 20%);
@@ -85,19 +87,79 @@ body {
   opacity: 92%;
 }
 
+.character-selector {
+  grid-column-start: 10;
+  grid-column-end: 17;
+  grid-row-start: 8;
+  grid-row-end: 14;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(2, 50%);
+  background-color: black;
+  border: rgb(86, 86, 86) solid 3px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.char1 {
+  grid-column: 1/2;
+  height: 90%;
+  width: 90%;
+}
+.char2 {
+  grid-column: 2/3;
+  height: 90%;
+  width: 90%;
+}
+.char3 {
+  grid-column: 3/4;
+  height: 90%;
+  width: 90%;
+}
+.char4 {
+  grid-column: 4/5;
+  height: 90%;
+  width: 90%;
+}
+.char5 {
+  grid-row: 2/3;
+  grid-column: 1/2;
+  height: 90%;
+  width: 90%;
+}
+.char6 {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  height: 90%;
+  width: 90%;
+}
+
+.char7 {
+  grid-row: 2/3;
+  grid-column: 3/4;
+  height: 90%;
+  width: 90%;
+}
+
+.char8 {
+  grid-row: 2/3;
+  grid-column: 4/5;
+  height: 90%;
+  width: 90%;
+}
+
 .header {
-  background-color: rgb(43, 36, 43);
+  background-color: rgb(0, 0, 0);
   grid-column: 1/6;
   grid-row: 1/2;
   overflow: hidden;
 }
 
-.mainchat {
+.chatbody {
   grid-column: 1/6;
   grid-row: 2/6;
   display: grid;
   grid-template-columns: repeat(10, 10%);
-  background-color: red;
 }
 
 .chatInput {
@@ -147,17 +209,157 @@ body {
 .sidebar {
   grid-column: 1/4;
   grid-row: 1/10;
-  background-color: rgb(105, 105, 105);
+  background-color: rgb(58, 91, 80);
+  overflow-y: scroll;
+  gap: 0;
+}
+
+.status-container {
+  height: 7rem;
+}
+
+.sidebar-char {
+  height: 90%;
+  width: 90%;
+  border: solid black 1px;
+  margin: auto;
+  border-radius: 0.5em;
+}
+
+.tsundere {
+  margin-top: 0.5em;
+  background: radial-gradient(
+    circle,
+    rgb(145, 62, 131) 20%,
+    rgb(255, 164, 250) 100%
+  );
+
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 2px black;
+  font-size: 1.5em;
+  font-family: "Gloria Hallelujah";
+}
+
+.tsundere p {
+  font-size: 0.5em;
+  font-family: "Gloria Hallelujah";
+  font-weight: 500;
+}
+
+.friend {
+  font-weight: 700;
+  color: black;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  font-size: 1.5em;
+  font-family: "Princess Sofia", cursive;
+}
+
+.friend p {
+  font-family: "IM Fell DW Pica SC", serif;
+  font-size: 0.7em;
+  text-shadow: 1px 1px 1px white;
+}
+
+.machine {
+  background-color: rgb(0, 0, 0);
+  color: rgb(0, 255, 0);
+  font-size: 1.4em;
+  font-family: "Train One", system-ui;
+  font-weight: 800;
+}
+
+.machine p {
+  font-size: 0.4em;
+}
+
+.katarina {
+  font-weight: 600;
+  background: linear-gradient(0deg, rgb(165, 113, 0) 0%, rgb(0, 166, 169) 100%);
+  font-size: 1.4em;
+  font-family: "Mooli", sans-serif;
+  color: rgb(251, 186, 197);
+  text-shadow: 1px 1px 1px black;
+}
+
+.katarina p {
+  font-size: 0.7em;
+}
+
+.ted {
+  font-family: "Creepster", system-ui;
+  background-color: rgb(26, 97, 155);
+  font-size: 1.9em;
+  color: rgb(243, 243, 243);
+  text-shadow: 2px 2px 2px black;
+}
+
+.ted p {
+  font-family: "Hi Melody", sans-serif;
+  font-size: 0.7em;
+}
+
+.socrates {
+  font-family: "Castoro Titling", serif;
+  font-weight: 700;
+  background-color: rgb(235, 206, 112);
+  color: #000000;
+  text-shadow: 2px 2px 2px white;
+  font-size: 1.5em;
+}
+
+.socrates p {
+  font-size: 0.5em;
+}
+
+.your-granddad {
+  background-color: rgb(7, 185, 255);
+  font-size: 2em;
+}
+
+.your-granddad p {
+  font-size: 0.7em;
+}
+
+.detective {
+  font-weight: 800;
+  background-color: rgb(90, 60, 22);
+  color: rgb(247, 210, 0);
+  text-shadow: 2px 2px 2px rgb(0, 0, 0);
+  font-size: 1.4em;
+  font-family: "Labrada", serif;
+  font-optical-sizing: auto;
+}
+
+.detective p {
+  font-size: 0.8em;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0px;
+}
+
+.chatmain {
+  grid-column: 4/11;
+  overflow-y: scroll;
+  padding: 1em;
+}
+
+#chat-home-top {
+  font-family: syncopate;
+  color: white;
+}
+
+.chathome {
+  background-color: rgb(0, 38, 48);
 }
 
 .chattext {
-  grid-column: 4/11;
-  background-color: rgb(58, 91, 80);
-  overflow-y: scroll;
+  background-color: rgb(65, 125, 105);
   cursor: url(./assets/hotlinenormal6.png), auto;
   cursor: url(./assets/hotlinenormal6.png), default;
 }
@@ -183,7 +385,7 @@ body {
   right: 0;
   background: linear-gradient(
       rgba(18, 16, 16, 0) 50%,
-      rgba(154, 154, 154, 0.25) 50%
+      rgba(228, 228, 228, 0.25) 50%
     ),
     linear-gradient(
       90deg,
@@ -206,7 +408,7 @@ body {
   max-width: 50%;
   border: solid black 1px;
   background-color: aliceblue;
-  border-radius: 15%;
+  border-radius: 1em;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -250,6 +452,10 @@ body {
   background-color: #bfbfbf;
   padding: 4px;
   height: 16rem;
+}
+
+.login.aesthetic-modal {
+  grid-column: 7/12;
 }
 
 .aesthetic-modal-2 {

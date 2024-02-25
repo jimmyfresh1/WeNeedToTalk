@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, createContext } from "react";
 import Welcome from "./views/Welcome";
 import Windows from "./views/Windows";
 import Desktop from "./views/Desktop";
@@ -9,10 +9,13 @@ import click from "./assets/click2.mp3";
 import { AnimatePresence } from "framer-motion";
 import "./App.css";
 import "./index.css";
+const PromptContext = createContext();
+export { PromptContext };
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [ready, setReady] = useState(false);
+  const [prompt, setPrompt] = useState([]);
 
   const handleLogin = (e) => {
     const clickAudio = new Audio(click);
@@ -47,10 +50,12 @@ function App() {
 
   return (
     <div id="root" className="aesthetic-effect-crt">
-      <AnimatePresence>
-        {renderPage}
-        <audio ref={audioRef} src={startupSound} preload="auto" />
-      </AnimatePresence>
+      <PromptContext.Provider value={{ prompt, setPrompt }}>
+        <AnimatePresence>
+          {renderPage}
+          <audio ref={audioRef} src={startupSound} preload="auto" />
+        </AnimatePresence>
+      </PromptContext.Provider>
     </div>
   );
 }

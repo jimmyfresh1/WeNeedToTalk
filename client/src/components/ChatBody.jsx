@@ -1,20 +1,21 @@
 import React from "react";
-import Chattext from "./Chattext";
-import Sidebar from "./Sidebar";
+import ChatMain from "./ChatMain";
+
+import ChatSidebar from "./ChatSidebar";
 import { motion } from "framer-motion";
 
-const Mainchat = () => {
+const ChatBody = () => {
   return (
     <motion.div
-      className="mainchat"
+      className="chatbody"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 4.8, duration: 0.2 }}
     >
-      <Sidebar />
-      <Chattext />
+      <ChatSidebar />
+      <ChatMain />
     </motion.div>
   );
 };
 
-export default Mainchat;
+export default ChatBody;
