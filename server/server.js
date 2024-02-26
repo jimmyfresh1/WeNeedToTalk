@@ -12,8 +12,12 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import dbConnect from "./config/mongoose.config.js";
+import router from "./routes/user.routes.js"
+
 const app = express();
 app.use(express.json(), cors());
+//route for login and registration stuff
+app.use("/api", router);
 dotenv.config();
 
 //the actual api call

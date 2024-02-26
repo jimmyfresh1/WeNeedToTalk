@@ -27,7 +27,7 @@ function App() {
     const clickAudio = new Audio(click);
     clickAudio.volume = 0.4;
     clickAudio.play();
-    e.preventDefault();
+    // e.preventDefault();
     clickAudio.onended = () => setLoggedIn(true);
   };
   const handleLogout = () => {
