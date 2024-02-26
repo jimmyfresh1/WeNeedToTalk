@@ -8,7 +8,7 @@ const ChatMain = () => {
   let renderChatMain;
   switch (true) {
     default:
-      renderChatMain = <ChatHome />;
+      renderChatMain = <ChatHome setInConvo={setInConvo} />;
   }
   return <>{renderChatMain}</>;
 };

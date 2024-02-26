@@ -3,8 +3,10 @@
 }
 
 .header {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 44);
   grid-row: 1/2;
+  overflow: hidden;
+  grid-column: 1/6;
 }
 
 .logo {
@@ -17,7 +19,7 @@
 .logo h1 {
   margin-top: 1em;
   margin-left: 2em;
-  font-size: 3em;
+  font-size: 3.5em;
   filter: drop-shadow(1px 1px #d184b6);
 }
 
@@ -49,7 +51,7 @@
 .sidebar {
   grid-column: 1/3;
   grid-row: 1/6;
-  background-color: rgb(58, 91, 80);
+  background-color: rgb(62, 58, 91);
   overflow-y: scroll;
   gap: 0;
 }
@@ -71,15 +73,22 @@
   grid-row: 1/6;
   overflow-y: scroll;
   padding: 1em;
+  box-sizing: border-box;
 }
 
 .chathome {
+  font-family: "Syncopate", sans-serif;
+  color: aliceblue;
   background-color: rgb(0, 38, 48);
+  text-shadow: 2px 2px #d21c92;
 }
 
-#chat-home-top {
-  font-family: syncopate;
-  color: white;
+.chathome p {
+  font-family: "Ysabeau", sans-serif;
+  color: rgb(64, 163, 249);
+  background-color: rgb(0, 38, 48);
+  text-shadow: 1px 1px #d21c92;
+  text-align: left;
 }
 
 .chattext {

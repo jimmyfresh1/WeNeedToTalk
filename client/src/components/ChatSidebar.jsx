@@ -1,13 +1,15 @@
 import React from "react";
 import CharacterSelectBox from "./CharacterSelectBox";
 
-const ChatSidebar = () => {
+const ChatSidebar = (props) => {
+  const { handleCharacterSelect } = props;
   return (
     <div className="sidebar">
       <CharacterSelectBox
         char="tsundere"
         username="MaterialGirl95"
         status="Not worried about what others think! EVER! -_-;;;"
+        handleCharacterSelect={handleCharacterSelect}
       />
       <CharacterSelectBox
         char="machine"

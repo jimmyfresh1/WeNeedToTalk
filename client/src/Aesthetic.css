@@ -48,6 +48,13 @@
   animation: pulse 10s infinite ease-in-out;
 }
 
+.gradient2 {
+  background: rgb(255, 0, 149);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulse 10s infinite ease-in-out;
+}
+
 /*crt */
 .aesthetic-effect-crt {
   display: inline-block;

@@ -8,7 +8,7 @@
 
   color: rgb(255, 255, 255);
   text-shadow: 2px 2px 2px black;
-  font-size: 1.5em;
+  font-size: 1.4em;
   font-family: "Gloria Hallelujah";
 }
 
@@ -16,25 +16,6 @@
   font-size: 0.5em;
   font-family: "Gloria Hallelujah";
   font-weight: 500;
-}
-
-.friend {
-  font-weight: 700;
-  color: black;
-  background: linear-gradient(
-    90deg,
-    rgba(131, 58, 180, 1) 0%,
-    rgba(253, 29, 29, 1) 50%,
-    rgba(252, 176, 69, 1) 100%
-  );
-  font-size: 1.5em;
-  font-family: "Princess Sofia", cursive;
-}
-
-.friend p {
-  font-family: "IM Fell DW Pica SC", serif;
-  font-size: 0.7em;
-  text-shadow: 1px 1px 1px white;
 }
 
 .machine {
@@ -49,17 +30,46 @@
   font-size: 0.4em;
 }
 
-.katarina {
-  font-weight: 600;
-  background: linear-gradient(0deg, rgb(165, 113, 0) 0%, rgb(0, 166, 169) 100%);
-  font-size: 1.4em;
-  font-family: "Mooli", sans-serif;
-  color: rgb(251, 186, 197);
-  text-shadow: 1px 1px 1px black;
+.your-granddad {
+  background-color: rgb(7, 185, 255);
+  font-size: 1.7em;
 }
 
-.katarina p {
+.your-granddad p {
+  font-size: 0.6em;
+}
+
+.detective {
+  font-weight: 800;
+  background-color: rgb(90, 60, 22);
+  color: rgb(247, 210, 0);
+  text-shadow: 2px 2px 2px rgb(0, 0, 0);
+  font-size: 1.2em;
+  font-family: "Labrada", serif;
+  font-optical-sizing: auto;
+}
+
+.detective p {
+  font-size: 0.8em;
+}
+
+.friend {
+  font-weight: 700;
+  color: black;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  font-size: 1.3em;
+  font-family: "Princess Sofia", cursive;
+}
+
+.friend p {
+  font-family: "IM Fell DW Pica SC", serif;
   font-size: 0.7em;
+  text-shadow: 1px 1px 1px white;
 }
 
 .ted {
@@ -81,32 +91,22 @@
   background-color: rgb(235, 206, 112);
   color: #000000;
   text-shadow: 2px 2px 2px white;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 .socrates p {
   font-size: 0.5em;
 }
 
-.your-granddad {
-  background-color: rgb(7, 185, 255);
-  font-size: 2em;
-}
-
-.your-granddad p {
-  font-size: 0.7em;
-}
-
-.detective {
-  font-weight: 800;
-  background-color: rgb(90, 60, 22);
-  color: rgb(247, 210, 0);
-  text-shadow: 2px 2px 2px rgb(0, 0, 0);
+.katarina {
+  font-weight: 600;
+  background: linear-gradient(0deg, rgb(165, 113, 0) 0%, rgb(0, 166, 169) 100%);
   font-size: 1.4em;
-  font-family: "Labrada", serif;
-  font-optical-sizing: auto;
+  font-family: "Mooli", sans-serif;
+  color: rgb(251, 186, 197);
+  text-shadow: 1px 1px 1px black;
 }
 
-.detective p {
-  font-size: 0.8em;
+.katarina p {
+  font-size: 0.7em;
 }
