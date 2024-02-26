@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 import select from "../assets/sega1.wav";
 
 const ChatBody = () => {
-  const [character, setCharacter] = useState(null);
+  const [currentCharacter, setCurrentCharacter] = useState(null);
   const handleCharacterSelect = (char) => {
     const selectAudio = new Audio(select);
     selectAudio.volume = 0.4;
     selectAudio.play();
-    setCharacter(char);
+    setCurrentCharacter(char);
   };
 
   return (
@@ -20,8 +20,11 @@ const ChatBody = () => {
       animate={{ opacity: 1 }}
       transition={{ delay: 4.8, duration: 0.2 }}
     >
-      <ChatSidebar handleCharacterSelect={handleCharacterSelect} />
-      <ChatMain />
+      <ChatSidebar
+        currentCharacter={currentCharacter}
+        handleCharacterSelect={handleCharacterSelect}
+      />
+      <ChatMain currentCharacter={currentCharacter} />
     </motion.div>
   );
 };

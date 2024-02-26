@@ -1,20 +1,15 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import {
-  tsunderePrompt,
-  tsunderePrepopulation,
-  matrixPrompt,
-  matrixPrepopulation,
-} from "../services/prompts";
-import useMessageList from "../hooks/useMessageList";
-import { sendMessage } from "../services/OpenAICall";
-import ChatBubble from "./Chatbubble";
-import imsend from "../assets/imsend.mp3";
-import imreceive from "../assets/imreceive.mp3";
-import send from "../assets/send.png";
+import { tsunderePrompt, tsunderePrepopulation } from "../../services/prompts";
+import useMessageList from "../../hooks/useMessageList";
+import { sendMessage } from "../../services/OpenAICall";
+import ChatBubble from "../Chatbubble";
+import imsend from "../../assets/imsend.mp3";
+import imreceive from "../../assets/imreceive.mp3";
+import send from "../../assets/send.png";
 
-const ChatConversation = () => {
+const TsundereConversation = () => {
   const { messages, addMessage } = useMessageList([tsunderePrompt]);
 
   useEffect(() => {
@@ -53,7 +48,7 @@ const ChatConversation = () => {
   };
 
   return (
-    <div className=" chattext">
+    <div className=" chatmain tsundere-chat" id="chatscroll">
       {tsunderePrepopulation()}
       {messages.slice(1).map((message, index) => {
         return (
@@ -89,4 +84,4 @@ const ChatConversation = () => {
   );
 };
 
-export default ChatConversation;
+export default TsundereConversation;
