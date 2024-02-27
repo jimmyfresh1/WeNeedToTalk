@@ -4,15 +4,25 @@ import { motion } from "framer-motion";
 import { matrixPrompt } from "../../services/prompts";
 import useMessageList from "../../hooks/useMessageList";
 import { sendMessage2 } from "../../services/OpenAICall";
-import ChatBubble from "../Chatbubble";
 import exitConvoSound from "../../assets/door.mp3";
+import blip from "../../assets/fblip.mp3";
+import typewriter from "../../assets/Typewriter.mp3";
 import "../../stylesa/MachineConversation.css";
 
 const MatrixConversation = () => {
-  const { messages, addMessage } = useMessageList([matrixPrompt]);
+  const { messages, addMessage } = useMessageList([
+    matrixPrompt,
+    {
+      role: "assistant",
+      content: ``,
+    },
+  ]);
+  const blipping = new Audio(blip);
+  const typing = new Audio(typewriter);
+  blipping.volume = 0.1;
+  typing.volume = 0.2;
   const [intro, setIntro] = useState("");
   const [introIdx, setIntroIdx] = useState(0);
-  const [msgIdx, setMsgIdx] = useState(0);
   const [inConvo, setInConvo] = useState(true);
   const [currentMessage, setCurrentMessage] = useState("");
   const [myInput, setMyInput] = useState("");
@@ -23,27 +33,7 @@ const MatrixConversation = () => {
     `You must think you're so special.`,
     `Look at you. Typing away without a care in the world. Or are you? Am I the one typing?`,
   ];
-  useEffect(() => {
-    let idx = 0;
-    if (messages.length > 0) {
-      let end = false;
 
-      const lastMessage = messages[messages.length - 1].content;
-
-      setCurrentMessage("");
-      const typeNextChar = () => {
-        if (idx < lastMessage.length) {
-          setCurrentMessage((prev) => prev + lastMessage.charAt(idx));
-          idx++;
-        }
-      };
-      const charCall = setTimeout(typeNextChar, 50);
-      return () => {
-        end = true;
-        clearTimeout(charCall);
-      };
-    }
-  }, [messages]);
   const displayText = machinePrepopulation.join("\r\n");
   useEffect(() => {
     let end = false;
@@ -51,6 +41,7 @@ const MatrixConversation = () => {
       if (introIdx < displayText.length && !end) {
         setIntro((prev) => prev + displayText.charAt(introIdx));
         setIntroIdx(introIdx + 1);
+        blipping.play();
       }
     };
     const charCall = setTimeout(typeNextChar, 50);
@@ -59,6 +50,24 @@ const MatrixConversation = () => {
       clearTimeout(charCall);
     };
   }, [introIdx, displayText]);
+
+  useEffect(() => {
+    if (messages.length > 0) {
+      const slicedMessages = messages.slice(1);
+      const lastMessage = slicedMessages[slicedMessages.length - 1].content;
+      let msgIdx = -1;
+      setCurrentMessage("");
+      const typeNextChar = () => {
+        if (msgIdx < lastMessage.length) {
+          setCurrentMessage((prev) => prev + lastMessage.charAt(msgIdx));
+          msgIdx++;
+          typing.play();
+          setTimeout(typeNextChar, 50);
+        }
+      };
+      typeNextChar();
+    }
+  }, [messages]);
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
@@ -106,15 +115,16 @@ const MatrixConversation = () => {
   return (
     <div className=" chatmain  machine-chat" id="chatscroll">
       <p id="demo">{intro}</p>
-      {/* {messages.slice(1).map((message, index) => (
+      {messages.slice(1, -1).map((message, index) => (
         <p key={index}>{message.content}</p>
-      ))} */}
+      ))}
       <p>{currentMessage}</p>
       <form autocomplete="off" onSubmit={SubmitHandler}>
         <input
           type="text"
           onChange={(e) => setMyInput(e.target.value)}
           onKeyDown={(e) => handleKeyPress(e)}
+          value={myInput}
         ></input>
       </form>
     </div>

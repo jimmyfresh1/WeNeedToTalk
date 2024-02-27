@@ -7,8 +7,8 @@ import Chatbox from "../components/Chatbox";
 const Desktop = (props) => {
   const { handleLogout } = props;
   const backgroundVariants = {
-    initial: { opacity: 0, transition: { duration: 3 } },
-    animate: { opacity: 1, transition: { duration: 5 } },
+    initial: { opacity: 0, transition: { duration: 2 } },
+    animate: { opacity: 1, transition: { duration: 4 } },
     exit: { opacity: 0, transition: { duration: 2 } },
   };
   return (

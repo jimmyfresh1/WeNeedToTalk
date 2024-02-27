@@ -1,18 +1,26 @@
 import React from "react";
 import tsunderepfp from "../../assets/characterpfps/tsundere.png";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ConvoContext } from "../../App";
 import { motion } from "framer-motion";
 import TsundereConversation from "../Conversations/TsundereConversation";
 import enterConvoSound from "../../assets/enterconvo.mp3";
+import chooseConvoSound from "../../assets/chooseconvo.mp3";
 
 const TsundereHome = () => {
   const { inConvo, setInConvo } = useContext(ConvoContext);
-  const handleConvoEntrance = () => {
+  const [convoIdx, setConvoIdx] = useState(-1);
+  const handleConvoEntrance = (idx) => {
     setInConvo(true);
     const convoEnter = new Audio(enterConvoSound);
     convoEnter.volume = 0.3;
     convoEnter.play();
+  };
+  const handleConvoClick = (idx) => {
+    const convoClick = new Audio(chooseConvoSound);
+    convoClick.volume = 0.3;
+    convoClick.play();
+    setConvoIdx(idx);
   };
   const convoList = [
     "test",
@@ -83,7 +91,11 @@ const TsundereHome = () => {
 
             <div className="convo-choose">
               {convoList.map((item, idx) => (
-                <p key={idx} className="gradient">
+                <p
+                  key={idx}
+                  onClick={() => handleConvoClick(idx)}
+                  className={idx == convoIdx ? "gradient2" : "gradient"}
+                >
                   {item}{" "}
                 </p>
               ))}
