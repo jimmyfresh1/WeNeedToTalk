@@ -1,11 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Agdasima:wght@400;700&family=Akaya+Telivigala&family=Alumni+Sans+Inline+One:ital@0;1&family=Atomic+Age&family=Bahiana&family=Bahianita&family=Bangers&family=Big+Shoulders+Stencil+Text:wght@100..900&family=Bowlby+One&family=Castoro+Titling&family=Caveat:wght@400..700&family=Creepster&family=Cute+Font&family=Cutive+Mono&family=Dangrek&family=DynaPuff:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Federant&family=Frijole&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Gloria+Hallelujah&family=Graduate&family=Hi+Melody&family=Hubballi&family=IM+Fell+DW+Pica+SC&family=Labrada:ital,wght@0,100..900;1,100..900&family=Lancelot&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Lumanosimo&family=Maiden+Orange&family=Metal+Mania&family=Milonga&family=Mooli&family=Oswald:wght@200..700&family=Phudu:wght@300..900&family=Princess+Sofia&family=Shadows+Into+Light&family=Sofadi+One&family=Sonsie+One&family=Supermercado+One&family=Syncopate:wght@400;700&family=Tangerine:wght@400;700&family=Tilt+Neon&family=Tourney:ital,wght@0,100..900;1,100..900&family=Train+One&family=Uncial+Antiqua&family=Ysabeau:ital,wght@0,1..1000;1,1..1000&family=Zilla+Slab+Highlight:wght@400;700&display=swap");
+
 body {
   margin: 0px;
   padding: 0px;
-  cursor: url(./assets/hotlineselect.png), all-scroll;
 }
 
 #root {
-  cursor: url(./assets/hotlinenormal6.png), auto;
   cursor: url(./assets/hotlinenormal6.png), default;
 }
 
@@ -19,36 +19,6 @@ body {
   height: 100vh;
 }
 
-.initial {
-  background-color: black;
-}
-
-.modal-button {
-  height: 2em;
-  width: 6em;
-  background-color: rgb(226, 226, 226);
-  cursor: url(./assets/hotlineselect.png), all-scroll;
-}
-
-.icon {
-  height: 6em;
-  width: 5em;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 3;
-}
-
-.icon2 {
-  height: 6em;
-  width: 5em;
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 4;
-  grid-row-end: 5;
-  cursor: url(./assets/select.png), pointer;
-}
-
 .backgroundImage {
   background-image: url("./assets/pc98.gif");
   /* Adjust the path as needed */
@@ -60,285 +30,18 @@ body {
   /* Or 'contain' depending on what you need */
 }
 
-.loginBackground {
-  background-image: url("./assets/lakeside.png");
-  /* Adjust the path as needed */
-  height: 100vh;
-  /* Or whatever fits your design */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* Or 'contain' depending on what you need */
-}
-
-.login {
-  grid-column: 8/13;
-  grid-row: 8/13;
-}
 
 .chatbox {
-  grid-column-start: 6;
+  grid-column-start: 7;
   grid-column-end: 19;
   grid-row-start: 4;
-  grid-row-end: 18;
+  grid-row-end: 17;
   display: grid;
-  grid-template-columns: repeat(5, 20%);
-  grid-template-rows: repeat(5, 20%);
+  grid-template-rows: repeat(5, 1fr);
+
   background-color: black;
   border: rgb(86, 86, 86) solid 3px;
   border-radius: 15px;
   overflow: hidden;
   opacity: 92%;
-}
-
-.header {
-  background-color: rgb(43, 36, 43);
-  grid-column: 1/6;
-  grid-row: 1/2;
-  overflow: hidden;
-}
-
-.mainchat {
-  grid-column: 1/6;
-  grid-row: 2/6;
-  display: grid;
-  grid-template-columns: repeat(10, 10%);
-  background-color: red;
-}
-
-.chatInput {
   box-sizing: border-box;
-  height: 1.5rem;
-  width: 50%;
-  margin: 1em;
-  border-radius: 5px;
-  filter: drop-shadow(1px 1px #17bdff);
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  text-shadow: 1px 1px 1px #17bdff;
-  font-size: 1em;
-}
-
-.chatInputButton button {
-  background-color: inherit;
-  border: none;
-  appearance: none;
-}
-
-.chatInputButton {
-  background: url(./assets/send.png);
-  height: 1em;
-  width: 1em;
-}
-
-.logo {
-  grid-column: 2/5;
-  display: flex;
-}
-
-.logo h1 {
-  font-size: 3em;
-  filter: drop-shadow(4px 4px #e20398);
-}
-
-.logo img {
-  height: 7.5em;
-  width: 7.5em;
-  filter: drop-shadow(5px 5px 4px #3b92b4);
-}
-
-.logo2 h3 {
-  font-size: 3em;
-  color: white;
-}
-
-.sidebar {
-  grid-column: 1/4;
-  grid-row: 1/10;
-  background-color: rgb(105, 105, 105);
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-.chattext {
-  grid-column: 4/11;
-  background-color: rgb(58, 91, 80);
-  overflow-y: scroll;
-  cursor: url(./assets/hotlinenormal6.png), auto;
-  cursor: url(./assets/hotlinenormal6.png), default;
-}
-
-.aesthetic-effect-crt {
-  display: inline-block;
-  position: relative;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  cursor: url(./assets/hotlinenormal6.png), auto;
-  cursor: url(./assets/hotlinenormal6.png), default;
-}
-
-.aesthetic-effect-crt::before {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%,
-      rgba(154, 154, 154, 0.25) 50%),
-    linear-gradient(90deg,
-      rgba(255, 0, 0, 0.06),
-      rgba(0, 255, 0, 0.02),
-      rgba(0, 0, 255, 0.06));
-  z-index: 2;
-  background-size:
-    100% 2px,
-    3px 100%;
-  pointer-events: none;
-}
-
-.chatbubblecontainer {
-  margin: 15px;
-}
-
-.chatbubble {
-  max-width: 50%;
-  border: solid black 1px;
-  background-color: aliceblue;
-  border-radius: 15%;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.chatbubblecontainer .chatbubble.user {
-  background-color: #d0e0f0;
-}
-
-.chatbubblecontainer .chatbubble.assistant {
-  margin-left: 50%;
-  background-color: aliceblue;
-}
-
-.username {
-  height: 2em;
-  font-size: 2em;
-  /* text-align: left; */
-  font-weight: 700;
-  color: rgb(0, 0, 0);
-  background-color: rgb(205, 154, 154);
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  text-shadow: rgb(255, 146, 146) 3px 3px 3px;
-}
-
-.message-body {
-  padding: 1.5em;
-  word-wrap: break-word;
-  font-family: arial;
-  text-align: justify;
-  font-size: 1.5em;
-  font-weight: 400;
-  text-shadow: rgb(255, 146, 146) 2px 2px 2px;
-  background-color: white;
-}
-
-.aesthetic-modal {
-  border: 1px solid;
-  box-shadow: 1px 1px 0 0 #000;
-  border-top: 1px solid #dfdfdf;
-  border-left: 1px solid #dfdfdf;
-  background-color: #bfbfbf;
-  padding: 4px;
-  height: 17rem;
-}
-
-.aesthetic-modal-registration {
-  border: 1px solid;
-  box-shadow: 1px 1px 0 0 #000;
-  border-top: 1px solid #dfdfdf;
-  border-left: 1px solid #dfdfdf;
-  background-color: #bfbfbf;
-  padding: 4px;
-  height: 20rem;
-}
-
-.aesthetic-modal-2 {
-  border: 1px solid;
-  box-shadow: 1px 1px 0 0 #000;
-  border-top: 1px solid #dfdfdf;
-  border-left: 1px solid #dfdfdf;
-  background-color: #bfbfbf;
-  padding: 4px;
-  height: 9rem;
-}
-
-.aesthetic-modal-title {
-  border: 1px solid;
-  box-shadow: 1px 1px 0 0 #000;
-  border-top: 1px solid #dfdfdf;
-  border-left: 1px solid #dfdfdf;
-  text-align: left;
-  background: #000084;
-  outline: 0;
-  padding-left: 4px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  padding-right: 4px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.aesthetic-title-text {
-  color: #fff;
-  font-size: 1em;
-}
-
-.aesthetic-modal-content {
-  overflow: visible;
-}
-
-.modal-form {
-  height: 1.5em;
-}
-
-.modal-form button {
-  margin-top: 1em;
-  height: 2em;
-  width: 6em;
-  background-color: rgb(141, 194, 176);
-  cursor: url(./assets/hotlineselect.png), all-scroll;
-}
-
-@keyframes pop-in {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.pop-in {
-  animation: pop-in 0.5s forwards;
-}
-
-.inputImage {
-  padding-top: 1em;
-  margin-left: 0.5em;
-  margin-bottom: 0;
-  height: 2em;
-  width: 2em;
-  position: relative;
-  top: 0.5em;
-  filter: drop-shadow(2px 4px #66234f);
-}
