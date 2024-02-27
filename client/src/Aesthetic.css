@@ -49,7 +49,7 @@
 }
 
 .gradient2 {
-  background: rgb(255, 0, 149);
+  background: rgb(106, 0, 255);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: pulse 10s infinite ease-in-out;
@@ -145,6 +145,15 @@
   overflow: visible;
 }
 
+.aesthetic-modal-registration {
+  border: 1px solid;
+  box-shadow: 1px 1px 0 0 #000;
+  border-top: 1px solid #dfdfdf;
+  border-left: 1px solid #dfdfdf;
+  background-color: #bfbfbf;
+  padding: 4px;
+  height: 20rem;
+}
 .modal-form {
   height: 1.5em;
 }

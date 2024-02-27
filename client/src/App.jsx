@@ -15,13 +15,13 @@ import "./Startup.css";
 import "./Chat.css";
 import "./Characters.css";
 
-const PromptContext = createContext();
-export { PromptContext };
+const ConvoContext = createContext();
+export { ConvoContext };
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [ready, setReady] = useState(false);
-  const [prompt, setPrompt] = useState([]);
+  const [inConvo, setInConvo] = useState(false);
 
   const handleLogin = (e) => {
     const clickAudio = new Audio(click);
@@ -56,12 +56,12 @@ function App() {
 
   return (
     <div id="root" className="aesthetic-effect-crt">
-      <PromptContext.Provider value={{ prompt, setPrompt }}>
+      <ConvoContext.Provider value={{ inConvo, setInConvo }}>
         <AnimatePresence>
           {renderPage}
           <audio ref={audioRef} src={startupSound} preload="auto" />
         </AnimatePresence>
-      </PromptContext.Provider>
+      </ConvoContext.Provider>
     </div>
   );
 }
