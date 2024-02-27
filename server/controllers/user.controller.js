@@ -1,5 +1,7 @@
 import User from '../models/user.model.js';
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+
 // create new
 async function createUser(req, res) {
     try {
@@ -22,6 +24,10 @@ async function findUser(req, res) {
             const passwordMatch = bcrypt.compareSync(password, user.password);
             if (passwordMatch) {
                 res.json("Success")
+                jwt.sign({login: user.login, id: user._id }, process.env.JWT_SECRET, {}, (err, token) => {
+                    if (err) throw err
+                    res.cookie('token', token).json(user)
+                })
             } else {
                 res.json("the password is incorrect")
             }

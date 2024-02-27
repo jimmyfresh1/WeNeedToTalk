@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
 
 const SignUp = (props) => {
+
     const [login, setLogin] = useState("")
 
-    const [email, setEmail] = useState()
+    const [email, setEmail] = useState("")
 
-    const [password, setPassword] = useState()
+    const [password, setPassword] = useState("")
 
     const navigate = useNavigate()
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -25,6 +27,8 @@ const SignUp = (props) => {
             })
     }
 
+
+
     return (
         <div className="login aesthetic-modal-registration">
             <div className="aesthetic-modal-title">
@@ -33,7 +37,7 @@ const SignUp = (props) => {
                 </div>
             </div>
             <div className="aesthetic-modal-content">
-                <form className="modal-form" onSubmit={handleSubmit}>
+                <form className="modal-form" onSubmit={handleSubmit} autocomplete="off">
                     <label htmlFor="">Create Login</label>
                     <br />
                     <br />
