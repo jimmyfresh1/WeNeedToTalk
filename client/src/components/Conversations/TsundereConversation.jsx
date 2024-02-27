@@ -3,34 +3,53 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { tsunderePrompt, tsunderePrepopulation } from "../../services/prompts";
 import useMessageList from "../../hooks/useMessageList";
-import { sendMessage } from "../../services/OpenAICall";
+import { sendMessage, sendMessage2 } from "../../services/OpenAICall";
 import ChatBubble from "../Chatbubble";
 import imsend from "../../assets/imsend.mp3";
 import imreceive from "../../assets/imreceive.mp3";
 import send from "../../assets/send.png";
-
-const TsundereConversation = () => {
+import exitConvoSound from "../../assets/door.mp3";
+const TsundereConversation = (props) => {
   const { messages, addMessage } = useMessageList([tsunderePrompt]);
+  const imSend = new Audio(imsend);
+  imSend.volume = 0.3;
+  const imReceive = new Audio(imreceive);
+  imReceive.volume = 0.2;
+  const { setInConvo } = props;
+  const enterConvo = {
+    initial: { opacity: 0, filter: "blur(5px)", transition: { duration: 2 } },
+    animate: { opacity: 1, filter: "blur(0px)", transition: { duration: 3 } },
+    exit: { opacity: 0, transition: { duration: 2 } },
+  };
+
+  const handleConvoExit = () => {
+    const convoExit = new Audio(exitConvoSound);
+    convoExit.volume = 0.3;
+    convoExit.play();
+    setInConvo(false);
+  };
 
   useEffect(() => {
     const elem = document.getElementById("chatscroll");
     elem.scrollTop = elem.scrollHeight;
   }, [messages]);
-
-  const imSend = new Audio(imsend);
-  imSend.volume = 0.3;
-  const imReceive = new Audio(imreceive);
-  imReceive.volume = 0.2;
   const [myInput, setMyInput] = useState("");
   const [response, setResponse] = useState("");
   const [error, setError] = useState("");
+  const [prompt, setPrompt] = useState({
+    role: "user",
+    content: "Please respond with the word bird thrice.",
+  });
 
-  const SubmitHandler = (form) => {
+  const appendMessage = () => {
     const newUserMessage = { role: "user", content: myInput };
     addMessage(newUserMessage);
-    form.preventDefault();
     imSend.play();
-    sendMessage(messages)
+  };
+
+  const handleCall = () => {
+    console.log("handling call!");
+    sendMessage2(messages)
       .then((res) => {
         const newAssistantMessage = {
           role: "assistant",
@@ -46,9 +65,33 @@ const TsundereConversation = () => {
       });
     setMyInput("");
   };
+  const handlePrompt = () => {
+    sendMessage2([prompt])
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+        setError(err.response ? err.response.data.error : err.message);
+      });
+  };
+
+  const SubmitHandler = (form) => {
+    appendMessage();
+    form.preventDefault();
+    handleCall();
+    handlePrompt();
+  };
 
   return (
-    <div className=" chatmain tsundere-chat" id="chatscroll">
+    <motion.div
+      key="tsundereConversation"
+      initial="initial"
+      animate="animate"
+      variants={enterConvo}
+      className=" chatmain tsundere-chat"
+      id="chatscroll"
+    >
       {tsunderePrepopulation()}
       {messages.slice(1).map((message, index) => {
         return (
@@ -80,7 +123,10 @@ const TsundereConversation = () => {
           className="inputImage"
         />
       </form>
-    </div>
+      <button className="start-convo" onClick={() => handleConvoExit()}>
+        End Conversation?
+      </button>
+    </motion.div>
   );
 };
 

@@ -5,7 +5,7 @@ const GranddadHome = () => {
     <div className="your-granddad-home chatmain char-home" id="chatscroll">
       <h1>Alias: HiHungryI'mDad</h1>
       <img src={granddad} className="pfp" alt="" />
-      <h2>Real Name: Mmm, what was it again?</h2>
+      <h2>Real Name: Mmm, what was it again???</h2>
     </div>
   );
 };

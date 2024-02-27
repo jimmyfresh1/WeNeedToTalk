@@ -30,7 +30,6 @@ body {
   /* Or 'contain' depending on what you need */
 }
 
-
 .chatbox {
   grid-column-start: 7;
   grid-column-end: 19;
@@ -45,3 +44,4 @@ body {
   overflow: hidden;
   opacity: 92%;
   box-sizing: border-box;
+}

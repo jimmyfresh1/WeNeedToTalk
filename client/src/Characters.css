@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .tsundere {
   margin-top: 0.5em;
   background: radial-gradient(
@@ -19,22 +20,14 @@
 }
 
 .tsundere-home {
-  font-family: "Gloria Hallelujah";
-  color: rgb(5, 138, 255);
+  font-family: "Ysabeau", sans-serif;
+  color: rgb(0, 55, 87);
   background: radial-gradient(
     circle,
-    rgb(190, 182, 189) 20%,
-    rgb(220, 148, 216) 100%
+    rgb(236, 236, 236) 20%,
+    rgb(212, 145, 210) 100%
   );
-  text-shadow: 2px 2px #bfbfbf;
-}
-
-.tsundere-home p {
-  font-family: "Gloria Hallelujah";
-  color: rgb(64, 163, 249);
-  background-color: rgb(0, 38, 48);
-  text-shadow: 1px 1px #d21c92;
-  text-align: left;
+  text-shadow: 1px 1px #cacaca;
 }
 
 .tsundere-chat {
@@ -45,24 +38,32 @@
   );
 }
 
+.tsundere-sidebar {
+  grid-column: 1/3;
+  grid-row: 1/6;
+  background-color: rgb(142, 187, 199);
+  overflow-y: scroll;
+  gap: 0;
+}
+
 .machine {
   background-color: rgb(0, 0, 0);
   color: rgb(0, 255, 0);
   font-size: 1.3em;
   font-family: "Train One", system-ui;
   font-weight: 800;
+  margin-top: 0.5em;
 }
 
 .machine p {
-  font-size: 0.4em;
+  font-size: 0.5em;
 }
 
 .machine-home {
+  font-family: "Ysabeau", sans-serif;
   background-color: rgb(0, 0, 0);
   color: rgb(0, 255, 0);
-  font-size: 1.3em;
-  font-family: "Train One", system-ui;
-  font-weight: 800;
+  text-shadow: 1px 1px 1px blue;
 }
 
 .machine-home p {
@@ -71,6 +72,26 @@
 
 .machine-chat {
   background-color: rgb(0, 0, 0);
+  font-size: 13pt;
+  font-family: "Hubballi", sans-serif;
+  color: rgb(0, 255, 0);
+  font-weight: 600;
+  margin: 0;
+  text-align: left;
+}
+.machine-chat input[type="text"] {
+  background-color: transparent;
+  font-size: 13pt;
+  font-family: "Hubballi", sans-serif;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  border: black;
+  background: none;
+  outline: none;
+}
+
+#demo {
+  white-space: pre-wrap;
 }
 
 .your-granddad {
@@ -83,8 +104,8 @@
 }
 
 .your-granddad-home {
+  font-family: "Ysabeau", sans-serif;
   background-color: rgb(7, 185, 255);
-  font-size: 1.7em;
 }
 
 .your-granddad-home p {
@@ -110,9 +131,7 @@
   background-color: rgb(90, 60, 22);
   color: rgb(247, 210, 0);
   text-shadow: 2px 2px 2px rgb(0, 0, 0);
-  font-size: 1.2em;
-  font-family: "Labrada", serif;
-  font-optical-sizing: auto;
+  font-family: "Ysabeau", sans-serif;
 }
 
 .detective-home p {
@@ -139,16 +158,16 @@
 }
 
 .friend-home {
-  font-weight: 700;
   color: black;
   background: linear-gradient(
     90deg,
-    rgba(131, 58, 180, 1) 0%,
+    rgb(205, 43, 70) 0%,
     rgba(253, 29, 29, 1) 50%,
     rgba(252, 176, 69, 1) 100%
   );
-  font-size: 1.3em;
-  font-family: "Princess Sofia", cursive;
+
+  font-family: "Ysabeau", sans-serif;
+  text-shadow: 1px 1px 1px rgb(25, 177, 149);
 }
 
 .friend-home p {
@@ -171,9 +190,8 @@
 }
 
 .ted-home {
-  font-family: "Creepster", system-ui;
+  font-family: "Ysabeau", sans-serif;
   background-color: rgb(26, 97, 155);
-  font-size: 1.9em;
   color: rgb(243, 243, 243);
   text-shadow: 2px 2px 2px black;
 }
@@ -197,12 +215,10 @@
 }
 
 .socrates-home {
-  font-family: "Castoro Titling", serif;
-  font-weight: 700;
+  font-family: "Ysabeau", sans-serif;
   background-color: rgb(235, 206, 112);
   color: #000000;
   text-shadow: 2px 2px 2px white;
-  font-size: 1.3em;
 }
 
 .socrates-home p {
@@ -223,10 +239,8 @@
 }
 
 .katarina-home {
-  font-weight: 600;
   background: linear-gradient(0deg, rgb(165, 113, 0) 0%, rgb(0, 166, 169) 100%);
-  font-size: 1.4em;
-  font-family: "Mooli", sans-serif;
+  font-family: "Ysabeau", sans-serif;
   color: rgb(251, 186, 197);
   text-shadow: 1px 1px 1px black;
 }
@@ -239,9 +253,115 @@
   width: 200px;
   height: 200px;
   grid-column: 2/3;
+  border-radius: 100px;
 }
 .char-home {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  padding: 0;
+}
+.bio {
+  text-align: left;
+}
+
+.bio h3 {
+  margin: 10px;
+}
+
+.bio h4 {
+  margin: 10px;
+}
+
+.bottom-half {
+  grid-column: 1/4;
+  grid-row: 2/4;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.bottom-half-tsundere {
+  background: radial-gradient(
+    circle,
+    rgba(204, 70, 195, 0.746) 20%,
+    rgba(127, 77, 255, 0.676) 100%
+  );
+  border-radius: 2em 2em 0 0;
+}
+
+.bottom-half-machine {
+  background: #080708;
+  border-radius: 2em 2em 0 0;
+}
+
+.blurb {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  border-radius: 3em;
+}
+
+.blurb h2 {
+  margin: 10px;
+}
+
+.blurb h3 {
+  margin: 10px;
+}
+.date-and-title {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+.tsundere-blurb {
+  text-shadow: 1px 1px #d21c92;
+  color: white;
+  font-family: "Gloria Hallelujah";
+}
+.tsundere-blurb p {
+  text-align: left;
+  margin: 20px;
+}
+.tsundere-blurb h2 {
+  color: rgb(0, 59, 59);
+  text-shadow: 1px 1px 1px rgb(203, 203, 203);
+}
+
+.machine-blurb {
+  text-shadow: 1px 1px #5c1cd2;
+  color: rgb(0, 255, 0);
+  font-family: "Hubballi", sans-serif;
+}
+.machine-blurb p {
+  text-align: left;
+  margin: 20px;
+  font-size: 1em;
+}
+.machine-blurb h2 {
+  color: rgb(60, 255, 0);
+  text-shadow: 1px 1px 1px rgb(135, 162, 194);
+  font-size: 2.5em;
+}
+
+.convo-choose {
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.693);
+  overflow: scroll;
+  font-family: "Syncopate";
+  font-weight: 700;
+}
+
+#machine-choose {
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.693);
+  overflow: scroll;
+  font-family: "Syncopate";
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.start-convo {
+  font-family: "Syncopate", sans-serif;
+  color: aliceblue;
+  background-color: rgb(3, 69, 65);
+  font-weight: 700;
 }

@@ -11,4 +11,13 @@ function sendMessage(messages) {
       throw err;
     });
 }
-export { sendMessage };
+
+function sendMessage2(messages) {
+  return http
+    .post(`/api/full`, { messages: messages })
+    .then((res) => res.data)
+    .catch((err) => {
+      throw err;
+    });
+}
+export { sendMessage, sendMessage2 };

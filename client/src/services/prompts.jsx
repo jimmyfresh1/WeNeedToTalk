@@ -53,37 +53,4 @@ const tsunderePrepopulation = () => {
   );
 };
 
-const matrixPrepopulation = () => {
-  return (
-    <>
-      <ChatBubble
-        role="assistant"
-        username="Man in the Machine"
-        message="You must think you're so special."
-      />
-      <ChatBubble
-        role="assistant"
-        username="Man in the Machine"
-        message="Look at you. Typing away without a care in the world. Or are you? Am I the one typing?"
-      />
-      <ChatBubble
-        role="user"
-        username="Man in the Machine"
-        message="Sorry, I was having dinner."
-      />
-
-      <ChatBubble
-        role="assistant"
-        username="Man in the Machine"
-        message="You THINK you were having dinner."
-      />
-    </>
-  );
-};
-
-export {
-  tsunderePrompt,
-  tsunderePrepopulation,
-  matrixPrompt,
-  matrixPrepopulation,
-};
+export { tsunderePrompt, tsunderePrepopulation, matrixPrompt };
