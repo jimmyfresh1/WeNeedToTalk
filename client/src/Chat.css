@@ -62,6 +62,7 @@
   border: solid black 1px;
   margin: auto;
   border-radius: 0.5em;
+  overflow: hidden;
 }
 
 .home {
