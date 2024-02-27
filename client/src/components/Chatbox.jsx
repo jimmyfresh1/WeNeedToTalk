@@ -1,18 +1,18 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import Header from "./Header";
-import Mainchat from "./Mainchat";
+import ChatHeader from "./ChatHeader";
+import ChatBody from "./ChatBody";
 const Chatbox = () => {
   return (
     <motion.div
       className="chatbox"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ delay: 4.2, duration: 0.2 }}
+      transition={{ delay: 4.1, duration: 0.2 }}
     >
-      <Header />
-      <Mainchat />
+      <ChatHeader />
+      <ChatBody />
     </motion.div>
   );
 };

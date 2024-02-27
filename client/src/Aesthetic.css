@@ -1,0 +1,157 @@
+/* main font hijinks */
+
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Syncopate:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap");
+
+.syncopate-regular {
+  font-family: "Syncopate", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.syncopate-bold {
+  font-family: "Syncopate", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.pixelify-sans {
+  font-family: "Pixelify Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.modal-form {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.aesthetic-modal-content label {
+  font-size: 1.5em;
+  font-family: "Syncopate";
+}
+.aesthetic-title-text {
+  font-family: "Syncopate";
+  color: #fff;
+  font-size: 1em;
+}
+
+.chatLabel {
+  font-size: 2em;
+  color: rgb(236, 236, 236);
+  text-shadow: 2px 2px 2px rgb(54, 65, 219);
+}
+
+/*aesthetic font pulse */
+.gradient {
+  background: #45cfbd;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulse 10s infinite ease-in-out;
+}
+
+.gradient2 {
+  background: rgb(255, 0, 149);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulse 10s infinite ease-in-out;
+}
+
+/*crt */
+.aesthetic-effect-crt {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.aesthetic-effect-crt::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%,
+      rgba(213, 213, 213, 0.2) 50%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.06),
+      rgba(0, 255, 0, 0.02),
+      rgba(0, 0, 255, 0.06)
+    );
+  z-index: 2;
+  background-size:
+    100% 2px,
+    3px 100%;
+  pointer-events: none;
+}
+
+/* windows aesthetic containers and buttons */
+
+.modal-button {
+  height: 2em;
+  width: 6em;
+  background-color: rgb(226, 226, 226);
+  cursor: url(./assets/hotlineselect.png), all-scroll;
+}
+.aesthetic-modal {
+  border: 1px solid;
+  box-shadow: 1px 1px 0 0 #000;
+  border-top: 1px solid #dfdfdf;
+  border-left: 1px solid #dfdfdf;
+  background-color: #bfbfbf;
+  padding: 4px;
+  height: 16rem;
+}
+
+.login.aesthetic-modal {
+  grid-column: 7/12;
+}
+
+.aesthetic-modal-2 {
+  border: 1px solid;
+  box-shadow: 1px 1px 0 0 #000;
+  border-top: 1px solid #dfdfdf;
+  border-left: 1px solid #dfdfdf;
+  background-color: #bfbfbf;
+  padding: 4px;
+  height: 9rem;
+}
+
+.aesthetic-modal-title {
+  border: 1px solid;
+  box-shadow: 1px 1px 0 0 #000;
+  border-top: 1px solid #dfdfdf;
+  border-left: 1px solid #dfdfdf;
+  text-align: left;
+  background: #000084;
+  outline: 0;
+  padding-left: 4px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.aesthetic-modal-content {
+  overflow: visible;
+}
+
+.modal-form {
+  height: 1.5em;
+}
+.modal-form button {
+  margin-top: 1em;
+  height: 2em;
+  width: 6em;
+  background-color: rgb(141, 194, 176);
+  cursor: url(./assets/hotlineselect.png), all-scroll;
+}
