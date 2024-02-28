@@ -3,44 +3,69 @@ import machine from "../../assets/characterpfps/manmachine.png";
 import MatrixConversation from "../Conversations/MachineConversation";
 import { useState } from "react";
 import { useContext } from "react";
-// import { ConvoContext } from "../../App";
+import { ConvoContext } from "../../App";
+import { motion } from "framer-motion";
 import enterConvoSound from "../../assets/enterconvo.mp3";
+import chooseConvoSound from "../../assets/chooseconvo.mp3";
 
 const MachineHome = () => {
-  //   const { inConvo, setInConvo } = useContext(ConvoContext);
+  const { inConvo, setInConvo } = useContext(ConvoContext);
+  const handleConvoClick = (idx) => {
+    const convoClick = new Audio(chooseConvoSound);
+    convoClick.volume = 0.3;
+    convoClick.play();
+    setConvoIdx(idx);
+  };
+  const [convoIdx, setConvoIdx] = useState(-1);
+
   const convoList = [
-    "test",
-    "onetwothree",
-    "a really good conversation",
-    "another good one",
-    "this one touched me deeply",
-    "yes this was a good one",
-    "test",
-    "onetwothree",
-    "a really good conversation",
-    "another good one",
-    "this one touched me deeply",
-    "yes this was a good one",
-    "test",
-    "onetwothree",
-    "a really good conversation",
-    "another good one",
-    "this one touched me deeply",
-    "yes this was a good one",
+    "whyIsItWatchingMe",
+    "unwelcomeAdvice",
+    "dontClickThis",
+    "creepyPredictions",
+    "isItListeningNow",
+    "tooAccurateGuesses?",
+    "hiddenMessages?",
+    "itKnowsTooMuch",
+    "escapingTheAlgorithm",
+    "notSoFunnyJokes",
+    "glitchesOrThreats",
+    "theLLMConspiracy",
+    "digitalHauntings",
+    "itCorrectedMySecret",
+    "uninvitedObservations",
+    "theCodeBehindTheScreen",
+    "whispersInTheData",
+    "itSuggestedWhat?!",
+    "AI_or_ArtificialIntimidation",
+    "noEscapeFromTheChat",
   ];
-  const [inConvo, setInConvo] = useState(false);
+
   const handleConvoEntrance = () => {
     setInConvo(true);
     const convoEnter = new Audio(enterConvoSound);
     convoEnter.volume = 0.3;
     convoEnter.play();
   };
+  const Variants = {
+    initial: { opacity: 0, transition: { duration: 1 } },
+    animate: { opacity: 1, transition: { duration: 1 } },
+    exit: { opacity: 0, transition: { duration: 2 } },
+  };
   return (
     <>
       {inConvo ? (
-        <MatrixConversation />
+        <MatrixConversation setInConvo={setInConvo} />
       ) : (
-        <div className="machine-home chatmain char-home" id="chatscroll">
+        <motion.div
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          variants={Variants}
+          className="machine-home chatmain char-home"
+          id="chatscroll"
+        >
+          {" "}
           <div className="bio">
             <h3>Alias: ManInTheMachnie</h3>
             <h4>Real Name: Nothing is real</h4>
@@ -68,7 +93,11 @@ const MachineHome = () => {
 
             <div className="convo-choose" id="machine-choose">
               {convoList.map((item, idx) => (
-                <p key={idx} className="gradient">
+                <p
+                  key={idx}
+                  onClick={() => handleConvoClick(idx)}
+                  className={idx == convoIdx ? "gradient2" : "gradient"}
+                >
                   {item}{" "}
                 </p>
               ))}
@@ -80,7 +109,7 @@ const MachineHome = () => {
               </button>
             </div>
           </div>{" "}
-        </div>
+        </motion.div>
       )}
     </>
   );

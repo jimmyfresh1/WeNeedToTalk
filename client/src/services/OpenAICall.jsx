@@ -12,9 +12,9 @@ function sendMessage(messages) {
     });
 }
 
-function sendMessage2(messages) {
+function sendMessage2(messages, maxTokens = 60) {
   return http
-    .post(`/api/full`, { messages: messages })
+    .post(`/api/full`, { messages: messages, maxTokens: maxTokens })
     .then((res) => res.data)
     .catch((err) => {
       throw err;

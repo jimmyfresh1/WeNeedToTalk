@@ -57,8 +57,8 @@ const TsundereHome = () => {
           animate="animate"
           exit="exit"
           variants={Variants}
-          className="tsundere-home chatmain char-home"
           id="chatscroll"
+          className="tsundere-home chatmain char-home"
         >
           <div className="bio">
             <h3>Alias: MaterialGirl95</h3>
