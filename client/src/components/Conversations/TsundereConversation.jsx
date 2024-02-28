@@ -49,7 +49,7 @@ const TsundereConversation = (props) => {
 
   const handleCall = () => {
     console.log("handling call!");
-    sendMessage2(messages)
+    sendMessage2([...messages, { role: "user", content: myInput }])
       .then((res) => {
         const newAssistantMessage = {
           role: "assistant",
@@ -65,22 +65,11 @@ const TsundereConversation = (props) => {
       });
     setMyInput("");
   };
-  const handlePrompt = () => {
-    sendMessage2([prompt])
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-        setError(err.response ? err.response.data.error : err.message);
-      });
-  };
 
   const SubmitHandler = (form) => {
     appendMessage();
     form.preventDefault();
     handleCall();
-    handlePrompt();
   };
 
   return (

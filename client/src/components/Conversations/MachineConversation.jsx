@@ -9,7 +9,7 @@ import blip from "../../assets/fblip.mp3";
 import typewriter from "../../assets/Typewriter.mp3";
 import "../../stylesa/MachineConversation.css";
 
-const MatrixConversation = () => {
+const MatrixConversation = (props) => {
   const { messages, addMessage } = useMessageList([
     matrixPrompt,
     {
@@ -23,7 +23,7 @@ const MatrixConversation = () => {
   typing.volume = 0.2;
   const [intro, setIntro] = useState("");
   const [introIdx, setIntroIdx] = useState(0);
-  const [inConvo, setInConvo] = useState(true);
+  const { setInConvo } = props;
   const [currentMessage, setCurrentMessage] = useState("");
   const [myInput, setMyInput] = useState("");
   const [response, setResponse] = useState("");
@@ -33,6 +33,11 @@ const MatrixConversation = () => {
     `You must think you're so special.`,
     `Look at you. Typing away without a care in the world. Or are you? Am I the one typing?`,
   ];
+  const enterConvo = {
+    initial: { opacity: 0, filter: "blur(5px)", transition: { duration: 2 } },
+    animate: { opacity: 1, filter: "blur(0px)", transition: { duration: 3 } },
+    exit: { opacity: 0, transition: { duration: 2 } },
+  };
 
   const displayText = machinePrepopulation.join("\r\n");
   useEffect(() => {
@@ -61,7 +66,7 @@ const MatrixConversation = () => {
         if (msgIdx < lastMessage.length) {
           setCurrentMessage((prev) => prev + lastMessage.charAt(msgIdx));
           msgIdx++;
-          typing.play();
+          slicedMessages.length > 1 && typing.play();
           setTimeout(typeNextChar, 50);
         }
       };
@@ -89,7 +94,7 @@ const MatrixConversation = () => {
 
   const handleCall = () => {
     console.log("handling call!");
-    sendMessage2(messages)
+    sendMessage2([...messages, { role: "user", content: myInput }], 150)
       .then((res) => {
         const newAssistantMessage = {
           role: "assistant",
@@ -113,7 +118,14 @@ const MatrixConversation = () => {
   };
 
   return (
-    <div className=" chatmain  machine-chat" id="chatscroll">
+    <motion.div
+      key="machineConversation"
+      initial="initial"
+      animate="animate"
+      variants={enterConvo}
+      className=" chatmain-machine  machine-chat"
+      id="chatscroll"
+    >
       <p id="demo">{intro}</p>
       {messages.slice(1, -1).map((message, index) => (
         <p key={index}>{message.content}</p>
@@ -127,7 +139,7 @@ const MatrixConversation = () => {
           value={myInput}
         ></input>
       </form>
-    </div>
+    </motion.div>
   );
 };
 

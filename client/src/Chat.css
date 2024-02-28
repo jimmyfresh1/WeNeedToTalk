@@ -79,6 +79,14 @@
   box-sizing: border-box;
 }
 
+.chatmain-machine {
+  grid-column: 3/11;
+  grid-row: 1/6;
+  overflow-y: scroll;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
 .chathome {
   font-family: "Syncopate", sans-serif;
   color: aliceblue;

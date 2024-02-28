@@ -7,13 +7,13 @@ const uniqueId = uuidv4().slice(0, 8);
 process.env.LANGCHAIN_PROJECT = `JS Tracing Walkthrough - ${uniqueId}`;
 import { RunTree } from "langsmith";
 
-async function completionCall(messages) {
+async function completionCall(messages, max_tokens = 60) {
   try {
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo-0125",
       messages: messages,
-      max_tokens: 60,
-      temperature: 1.2,
+      max_tokens: max_tokens,
+      temperature: 1.3,
       frequency_penalty: 1.1,
       presence_penalty: 1.1,
       n: 1,

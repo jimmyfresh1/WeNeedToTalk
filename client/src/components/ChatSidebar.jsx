@@ -3,6 +3,7 @@ import CharacterSelectBox from "./CharacterSelectBox";
 import TsundereSidebar from "./Sidebars/TsundereSidebar";
 import { useContext } from "react";
 import { ConvoContext } from "../App";
+import MachineSidebar from "./Sidebars/MachineSidebar";
 
 const ChatSidebar = (props) => {
   const { currentCharacter, handleCharacterSelect } = props;
@@ -12,6 +13,9 @@ const ChatSidebar = (props) => {
   switch (true) {
     case inConvo == true && currentCharacter == "tsundere":
       sidebarRender = <TsundereSidebar />;
+      break;
+    case inConvo == true && currentCharacter == "machine":
+      sidebarRender = <MachineSidebar setInConvo={setInConvo} />;
       break;
   }
   return (
