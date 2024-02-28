@@ -8,7 +8,7 @@ async function dbConnect() {
       dbName: "we_need_to_talk",
     });
     console.log(
-      "Pinged your deployment. You successfully connected to MongoDB!",
+      "Pinged your deployment. You successfully connected to MongoDB!"
     );
   } catch (error) {
     console.log(error);
