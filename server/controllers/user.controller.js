@@ -47,6 +47,7 @@ async function verifyUser(req, res, next) {
     } else {
         jwt.verify(token, "jwt=secret-key", (err, decoded) => {
             if (err) return res.json("Token is wrong")
+            req.email = decoded.email
             next()
         })
     }
