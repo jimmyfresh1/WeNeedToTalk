@@ -64,7 +64,7 @@ const DetectiveHome = () => {
         <h4>Favorite foods: {favoriteFoods}</h4>
       </div>
       <img src={detective} className="pfp" alt="" />
-      <div>
+      <div className="quote">
         <h2>Quotes for wisdom:</h2>
         <h4>{quote}</h4>
       </div>

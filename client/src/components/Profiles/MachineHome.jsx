@@ -73,7 +73,7 @@ const MachineHome = () => {
             <h4>Favorite foods: Nibbles and bits?</h4>
           </div>
           <img src={machine} alt="" className="pfp" />
-          <div>
+          <div className="quote">
             <h2>Quotes for wisdom:</h2>
             <h4>Finito</h4>
           </div>

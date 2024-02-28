@@ -182,22 +182,15 @@
 }
 
 .friend-home {
-  color: black;
+  color: rgb(255, 255, 255);
   background: linear-gradient(
     90deg,
-    rgb(205, 43, 70) 0%,
     rgba(253, 29, 29, 1) 50%,
-    rgba(252, 176, 69, 1) 100%
+    rgb(169, 100, 3) 100%
   );
 
   font-family: "Ysabeau", sans-serif;
-  text-shadow: 1px 1px 1px rgb(25, 177, 149);
-}
-
-.friend-home p {
-  font-family: "IM Fell DW Pica SC", serif;
-  font-size: 0.7em;
-  text-shadow: 1px 1px 1px white;
+  text-shadow: 1px 1px 1px rgb(19, 61, 54);
 }
 
 .ted {
@@ -236,6 +229,9 @@
 
 .socrates p {
   font-size: 0.5em;
+}
+#socrates-choose {
+  font-size: 1em;
 }
 
 .socrates-home {
@@ -296,6 +292,7 @@
 }
 .bio {
   text-align: left;
+  font-size: 1.2em;
 }
 
 .bio h3 {
@@ -306,12 +303,16 @@
   margin: 10px;
 }
 
+.quote {
+  font-size: 23px;
+}
 .bottom-half {
   grid-column: 1/4;
   grid-row: 2/4;
   padding: 1em;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  overflow: scroll;
 }
 .bottom-half-tsundere {
   background: radial-gradient(
@@ -332,8 +333,40 @@
   border-radius: 2em 2em 0 0;
 }
 
+.bottom-half-socrates {
+  font-family: "Castoro Titling", serif;
+  background: #cbccce70;
+  border-radius: 2em 2em 0 0;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.bottom-half-socrates h2 {
+  font-family: "Castoro Titling", serif;
+  background: #eaff0070;
+  border-radius: 1em 1em 0 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.bottom-half-katarina {
+  font-family: "Mooli", sans-serif;
+  font-size: 1.85rem;
+  background: #80a30270;
+  border-radius: 1em 1em 0 0;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px rgb(126, 0, 169);
+}
+
 .bottom-half-dad {
   background: #90a10c70;
+  border-radius: 2em 2em 0 0;
+}
+.bottom-half-friend {
+  font-family: "IM Fell DW Pica SC", serif;
+  text-shadow: 2px 2px 2px rgb(0, 0, 0);
+  font-size: 2em;
+  background: #007b0670;
   border-radius: 2em 2em 0 0;
 }
 
@@ -354,6 +387,10 @@
   display: flex;
   flex-direction: row;
   gap: 1em;
+}
+
+.date-and-title-fred {
+  font-family: "Creepster", system-ui;
 }
 .tsundere-blurb {
   text-shadow: 1px 1px #d21c92;
@@ -382,7 +419,7 @@
 .machine-blurb p {
   text-align: left;
   margin: 20px;
-  font-size: 1em;
+  font-size: 1.4em;
 }
 .machine-blurb h2 {
   color: rgb(60, 255, 0);
@@ -411,6 +448,7 @@
   font-family: "Syncopate";
   font-weight: 700;
   font-size: 1rem;
+  margin-left: 10px;
 }
 
 #machine-choose {
@@ -420,6 +458,10 @@
   font-family: "Syncopate";
   font-weight: 700;
   font-size: 2em;
+}
+
+#fred-choose {
+  font-size: 1em;
 }
 
 .start-convo {

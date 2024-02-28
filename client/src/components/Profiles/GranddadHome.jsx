@@ -59,7 +59,7 @@ const GranddadHome = () => {
         <h4>Favorite foods: Sandwiches</h4>
       </div>
       <img src={granddad} alt="" className="pfp" />
-      <div>
+      <div className="quote">
         <h2>Quotes for wisdom:</h2>
         <h4>
           I thought the dryer was shrinking my clothes. Turns out it was the

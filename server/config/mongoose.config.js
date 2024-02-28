@@ -5,10 +5,10 @@ const MONGODB_URI = process.env.MONGODB_URI;
 async function dbConnect() {
   try {
     await connect(MONGODB_URI, {
-      dbName: "sample_mflix",
+      dbName: "we_need_to_talk",
     });
     console.log(
-      "Pinged your deployment. You successfully connected to MongoDB!",
+      "Pinged your deployment. You successfully connected to MongoDB!"
     );
   } catch (error) {
     console.log(error);

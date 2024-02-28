@@ -65,22 +65,11 @@ const TsundereConversation = (props) => {
       });
     setMyInput("");
   };
-  // const handlePrompt = () => {
-  //   sendMessage2([prompt])
-  //     .then((res) => {
-  //       console.log(res);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       setError(err.response ? err.response.data.error : err.message);
-  //     });
-  // };
 
   const SubmitHandler = (form) => {
     appendMessage();
     form.preventDefault();
     handleCall();
-    // handlePrompt();
   };
 
   return (
