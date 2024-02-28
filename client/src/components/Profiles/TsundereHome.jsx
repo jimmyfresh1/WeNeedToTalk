@@ -22,7 +22,7 @@ const TsundereHome = () => {
     convoClick.play();
     setConvoIdx(idx);
   };
-  const convoList = [
+  const convoListDummy = [
     "test",
     "onetwothree",
     "a really good conversation",
@@ -42,6 +42,8 @@ const TsundereHome = () => {
     "this one touched me deeply",
     "yes this was a good one",
   ];
+  const [convoList, setConvoList] = useState(convoListDummy);
+
   const Variants = {
     initial: { opacity: 0, transition: { duration: 1 } },
     animate: { opacity: 1, transition: { duration: 1 } },
@@ -57,8 +59,8 @@ const TsundereHome = () => {
           animate="animate"
           exit="exit"
           variants={Variants}
-          className="tsundere-home chatmain char-home"
           id="chatscroll"
+          className="tsundere-home chatmain char-home"
         >
           <div className="bio">
             <h3>Alias: MaterialGirl95</h3>
@@ -67,7 +69,7 @@ const TsundereHome = () => {
             <h4>Favorite foods: Burgers, ramen, ice cream</h4>
           </div>
           <img src={tsunderepfp} className="pfp" alt="" />
-          <div>
+          <div className="quote">
             <h2>Quotes for wisdom:</h2>
             <h4>
               If you've got time to ask stupid questions, why not spend a little
