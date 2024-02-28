@@ -8,4 +8,9 @@ router.route("/create")
 router.route("/login")
     .post(findUser)
 
+router.post('/logout', (req, res) => {
+    res.clearCookie("token")
+    res.json({message: "Logout successfull"})
+})
+
 export default router
