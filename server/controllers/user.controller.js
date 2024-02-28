@@ -1,5 +1,6 @@
 import User from '../models/user.model.js';
 import bcrypt from 'bcrypt';
+import cookieParser from 'cookie-parser';
 import jwt from 'jsonwebtoken';
 
 // create new
@@ -23,11 +24,9 @@ async function findUser(req, res) {
         if (user) {
             const passwordMatch = bcrypt.compareSync(password, user.password);
             if (passwordMatch) {
+                const token = jwt.sign({ login: user.login }, "jwt-secret-key", { expiresIn: "1d" })
+                res.cookie("token", token)
                 res.json("Success")
-                jwt.sign({login: user.login, id: user._id }, process.env.JWT_SECRET, {}, (err, token) => {
-                    if (err) throw err
-                    res.cookie('token', token).json(user)
-                })
             } else {
                 res.json("the password is incorrect")
             }
@@ -40,7 +39,21 @@ async function findUser(req, res) {
     }
 }
 
+async function verifyUser(req, res, next) {
+    const token = req.cookies.token
+    console.log(token)
+    if (!token) {
+        return res.json("The token not available")
+    } else {
+        jwt.verify(token, "jwt=secret-key", (err, decoded) => {
+            if (err) return res.json("Token is wrong")
+            next()
+        })
+    }
+}
+
 export {
     createUser,
-    findUser
+    findUser,
+    verifyUser
 };
