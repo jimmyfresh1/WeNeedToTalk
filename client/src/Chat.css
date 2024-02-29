@@ -92,6 +92,7 @@
   color: aliceblue;
   background-color: rgb(0, 38, 48);
   text-shadow: 2px 2px #d21c92;
+  font-size: 1.5em;
 }
 
 .chathome p {
@@ -184,4 +185,9 @@
   position: relative;
   top: 0.5em;
   filter: drop-shadow(2px 4px #66234f);
+}
+.end-save {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }

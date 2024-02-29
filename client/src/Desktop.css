@@ -10,9 +10,19 @@
 .icon2 {
   height: 6em;
   width: 5em;
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 4;
-  grid-row-end: 5;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  cursor: url(./assets/select.png), pointer;
+}
+
+.icon3 {
+  height: 6em;
+  width: 5em;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 8;
+  grid-row-end: 9;
   cursor: url(./assets/select.png), pointer;
 }

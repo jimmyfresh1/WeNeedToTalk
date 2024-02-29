@@ -15,11 +15,11 @@ const ConversationSchema = new Schema(
     },
     message_list: {
       type: String,
-      required: [true, "Password is required!"],
-      minlength: [10, "Password must be atleast five characters"],
+      required: [true],
+      minlength: [10],
     },
   },
   { timeStamps: true }
 );
-const User = model("Conversation", ConversationSchema);
+const Conversation = model("Conversation", ConversationSchema);
 export default Conversation;
