@@ -1,13 +1,20 @@
 import React from "react";
 import tsunderepfp from "../../assets/characterpfps/tsundere.png";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { ConvoContext } from "../../App";
 import { motion } from "framer-motion";
 import TsundereConversation from "../Conversations/TsundereConversation";
 import enterConvoSound from "../../assets/enterconvo.mp3";
 import chooseConvoSound from "../../assets/chooseconvo.mp3";
-
+import {
+  getTsundereList,
+  getTsundereSingle,
+} from "../../services/mongoDBServices";
+import useMessageList from "../../hooks/useMessageList";
+import { tsunderePrompt } from "../../services/prompts";
 const TsundereHome = () => {
+  const [update, setUpdate] = useState(Date.now());
+  const { messages, addMessage, setList } = useMessageList([tsunderePrompt]);
   const { inConvo, setInConvo } = useContext(ConvoContext);
   const [convoIdx, setConvoIdx] = useState(-1);
   const handleConvoEntrance = (idx) => {
@@ -16,34 +23,41 @@ const TsundereHome = () => {
     convoEnter.volume = 0.3;
     convoEnter.play();
   };
-  const handleConvoClick = (idx) => {
+  const handleConvoClick = (item, idx) => {
+    console.log(item);
     const convoClick = new Audio(chooseConvoSound);
     convoClick.volume = 0.3;
     convoClick.play();
     setConvoIdx(idx);
+    if (idx === -1) {
+      console.log("Starting a new conversation");
+      setList([tsunderePrompt]);
+    } else {
+      getTsundereSingle(item.id).then((data) => {
+        console.log(data.message_list);
+        let messageListString = data.message_list;
+        const messageArray = JSON.parse(data.message_list);
+        console.log(messageArray);
+        setList(messageArray);
+      });
+    }
   };
   const convoListDummy = [
-    "test",
-    "onetwothree",
-    "a really good conversation",
-    "another good one",
-    "this one touched me deeply",
-    "yes this was a good one",
-    "test",
-    "onetwothree",
-    "a really good conversation",
-    "another good one",
-    "this one touched me deeply",
-    "yes this was a good one",
-    "test",
-    "onetwothree",
-    "a really good conversation",
-    "another good one",
-    "this one touched me deeply",
-    "yes this was a good one",
+    { _id: "123123", title: "test" },
+    { _id: "23123", title: "onetwothree" },
   ];
   const [convoList, setConvoList] = useState(convoListDummy);
-
+  useEffect(() => {
+    getTsundereList()
+      .then((data) => {
+        const retrievedConvoList = data.map((convo) => ({
+          title: convo.title,
+          id: convo._id,
+        }));
+        setConvoList(retrievedConvoList);
+      })
+      .catch((error) => console.error(error));
+  }, [update]);
   const Variants = {
     initial: { opacity: 0, transition: { duration: 1 } },
     animate: { opacity: 1, transition: { duration: 1 } },
@@ -52,7 +66,12 @@ const TsundereHome = () => {
   return (
     <>
       {inConvo ? (
-        <TsundereConversation setInConvo={setInConvo} />
+        <TsundereConversation
+          setInConvo={setInConvo}
+          messages={messages}
+          addMessage={addMessage}
+          setUpdate={setUpdate}
+        />
       ) : (
         <motion.div
           initial="initial"
@@ -91,16 +110,23 @@ const TsundereHome = () => {
               </p>
             </div>
 
-            <div className="convo-choose">
+            <div className="convo-choose" name="convo-choice-div">
               {convoList.map((item, idx) => (
                 <p
                   key={idx}
-                  onClick={() => handleConvoClick(idx)}
+                  onClick={() => handleConvoClick(item, idx)}
                   className={idx == convoIdx ? "gradient2" : "gradient"}
                 >
-                  {item}{" "}
+                  {item.title}
                 </p>
               ))}
+              <p
+                key="-1"
+                onClick={() => handleConvoClick(null, -1)}
+                className={-1 == convoIdx ? "gradient2" : "gradient"}
+              >
+                New Conversation?
+              </p>
               <button
                 className="start-convo"
                 onClick={() => handleConvoEntrance()}

@@ -15,20 +15,21 @@ import dbConnect from "./config/mongoose.config.js";
 import router from "./routes/user.routes.js";
 import router2 from "./routes/llm.routes.js";
 import cookieParser from "cookie-parser";
-
-
+import router3 from "./routes/conversation.routes.js";
 
 const app = express();
+
 app.use(express.json(), cors({
   origin: ["http://localhost:5173"],
   credentials: true
 }));
 app.use(cookieParser())
+
 //route for login and registration stuff
 app.use("/api", router);
 app.use("/api", router2);
 
-
+app.use("/api", router3);
 dotenv.config();
 const PORT = process.env.PORT;
 dbConnect();
