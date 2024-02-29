@@ -50,16 +50,18 @@ async function findUser(req, res) {
 }
 
 async function verifyUser(req, res, next) {
-  const token = req.cookies.token;
-  console.log(token);
-  if (!token) {
-    return res.json("The token not available");
-  } else {
-    jwt.verify(token, "jwt=secret-key", (err, decoded) => {
-      if (err) return res.json("Token is wrong");
-      next();
-    });
-  }
+
+    const token = req.cookies.token
+    console.log(token)
+    if (!token) {
+        return res.json("The token not available")
+    } else {
+        jwt.verify(token, "jwt=secret-key", (err, decoded) => {
+            if (err) return res.json("Token is wrong")
+            req.email = decoded.email
+            next()
+        })
+    }
 }
 
 export { createUser, findUser, verifyUser };

@@ -18,15 +18,13 @@ import cookieParser from "cookie-parser";
 import router3 from "./routes/conversation.routes.js";
 
 const app = express();
-app.use(
-  express.json(),
-  cors({
-    origin: ["http://localhost:5173"],
-    methods: ["GET", "POST"],
-    credentials: true,
-  })
-);
-app.use(cookieParser());
+
+app.use(express.json(), cors({
+  origin: ["http://localhost:5173"],
+  credentials: true
+}));
+app.use(cookieParser())
+
 //route for login and registration stuff
 app.use("/api", router);
 app.use("/api", router2);
