@@ -110,7 +110,7 @@ const TsundereHome = () => {
               </p>
             </div>
 
-            <div className="convo-choose">
+            <div className="convo-choose" name="convo-choice-div">
               {convoList.map((item, idx) => (
                 <p
                   key={idx}
