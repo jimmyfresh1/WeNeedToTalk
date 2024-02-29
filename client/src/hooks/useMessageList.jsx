@@ -8,7 +8,7 @@ const useMessageList = (initialMessages = []) => {
   function addMessage(message) {
     setMessages((prevMessages) => [...prevMessages, message]);
   }
-  return { messages, addMessage };
+  return { messages, addMessage, setList };
 };
 
 export default useMessageList;
