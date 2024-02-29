@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 import ChatHeader from "./ChatHeader";
 import ChatBody from "./ChatBody";
-const Chatbox = () => {
+const Chatbox = (props) => {
   return (
     <motion.div
       className="chatbox"

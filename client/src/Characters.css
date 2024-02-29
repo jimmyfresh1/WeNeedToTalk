@@ -28,6 +28,7 @@
     rgb(212, 145, 210) 100%
   );
   text-shadow: 1px 1px #cacaca;
+  font-size: 0.8em;
 }
 
 .tsundere-chat {
@@ -64,6 +65,7 @@
   background-color: rgb(0, 0, 0);
   color: rgb(0, 255, 0);
   text-shadow: 1px 1px 1px blue;
+  font-size: 0.8em;
 }
 
 .machine-home p {
@@ -130,6 +132,7 @@
 .your-granddad-home {
   font-family: "Ysabeau", sans-serif;
   background-color: rgb(7, 185, 255);
+  font-size: 0.8em;
 }
 
 .your-granddad-home p {
@@ -156,6 +159,7 @@
   color: rgb(247, 210, 0);
   text-shadow: 2px 2px 2px rgb(0, 0, 0);
   font-family: "Ysabeau", sans-serif;
+  font-size: 0.8em;
 }
 
 .detective-home p {
@@ -190,6 +194,7 @@
   );
 
   font-family: "Ysabeau", sans-serif;
+  font-size: 0.8em;
   text-shadow: 1px 1px 1px rgb(19, 61, 54);
 }
 
@@ -211,6 +216,7 @@
   background-color: rgb(26, 97, 155);
   color: rgb(243, 243, 243);
   text-shadow: 2px 2px 2px black;
+  font-size: 0.8em;
 }
 
 .ted-home p {
@@ -239,6 +245,7 @@
   background-color: rgb(235, 206, 112);
   color: #000000;
   text-shadow: 2px 2px 2px white;
+  font-size: 0.8em;
 }
 
 .socrates-home p {
@@ -263,6 +270,7 @@
   font-family: "Ysabeau", sans-serif;
   color: rgb(251, 186, 197);
   text-shadow: 1px 1px 1px black;
+  font-size: 0.7em;
 }
 
 .katarina-home p {
@@ -388,10 +396,15 @@
   display: flex;
   flex-direction: row;
   gap: 1em;
+  font-size: 0.7em;
 }
 
 .date-and-title-fred {
   font-family: "Creepster", system-ui;
+}
+
+#fred-message {
+  font-size: 1.1em;
 }
 .tsundere-blurb {
   text-shadow: 1px 1px #d21c92;
@@ -408,8 +421,9 @@
 }
 
 .detective-blurb {
-  font-family: "Labrada", serif;
-  font-size: 1.75rem;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 1px black;
 }
 
 .machine-blurb {

@@ -22,7 +22,6 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [ready, setReady] = useState(false);
   const [inConvo, setInConvo] = useState(false);
-
   const handleLogin = (e) => {
     const clickAudio = new Audio(click);
     clickAudio.volume = 0.4;

@@ -20,7 +20,7 @@ const friendData = {
   date: "This morning, wee hours of 3AM",
   title: "Still shaking",
   message:
-    "Everytime I watch the seminal Boss Baby, I'm stunned even more than the list. Imagine a sandwich that every time you ordered it, every time it graced your lips, it tasted better than the last time. How does the film keep doing this? I didn't just watch it yesterday. I lived it. I would watch it even more if I thought my body could handle it. Guess what I'm gonna watch this weekend?",
+    "Everytime I watch the seminal Boss Baby, I'm stunned even more than the last watch. Imagine a sandwich that every time you ordered it, every time it graced your lips, it tasted better than the last time. How does the film keep doing this? I didn't just watch it yesterday. I lived it. I would watch it even more if I thought my body could handle it. Guess what I'm gonna watch this weekend?",
 };
 
 const fredData = {
@@ -50,7 +50,7 @@ const socratesData = {
 
 const katarinaData = {
   alias: "Katarina Gepetto",
-  realName: "That IS my real name",
+  realName: "That IS my real name...but my friends call me Kat GPT",
   status: "Reading some very interesting things",
   favoriteFoods: "Neo Kobe Pizza, Freshly Cloned Fruit",
   quote: "That guy above me sure has a lot to say",

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { motion } from "framer-motion";
 import { tsunderePrompt, tsunderePrepopulation } from "../../services/prompts";
 import useMessageList from "../../hooks/useMessageList";
@@ -10,6 +10,8 @@ import imsend from "../../assets/imsend.mp3";
 import imreceive from "../../assets/imreceive.mp3";
 import send from "../../assets/send.png";
 import exitConvoSound from "../../assets/door.mp3";
+import { ConvoContext } from "../../App";
+
 const TsundereConversation = (props) => {
   const { messages, addMessage, setUpdate } = props;
   const imSend = new Audio(imsend);

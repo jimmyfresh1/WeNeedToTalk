@@ -1,6 +1,7 @@
 import axios from "axios";
 const http = axios.create({
   baseURL: `http://localhost:9999`,
+  withCredentials: true,
 });
 
 function getTsundereList() {

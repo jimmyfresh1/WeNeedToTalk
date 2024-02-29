@@ -75,7 +75,7 @@ const TedHome = () => {
             <h2>{date}</h2>
             <h2>{title}</h2>
           </div>
-          <p>{message}</p>
+          <p id="fred-message">{message}</p>
         </div>
         <div className="convo-choose" id="fred-choose">
           {convoList.map((item, idx) => (

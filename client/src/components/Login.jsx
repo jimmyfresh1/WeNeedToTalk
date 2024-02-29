@@ -18,10 +18,10 @@ const Login = (props) => {
       .post("http://localhost:9999/api/login", tempObject)
       .then((res) => {
         console.log(res);
-        if (res.data === "Success") {
+        if (res.data == "Success") {
           handleLogin();
         } else {
-          setErrors({ error: res.data });
+          setErrors(res.data);
         }
       })
       .catch((err) => {

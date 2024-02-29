@@ -1,4 +1,4 @@
-import { model, Schema } from "mongoose";
+import { model, Schema, mongoose } from "mongoose";
 
 const ConversationSchema = new Schema(
   {
@@ -18,6 +18,7 @@ const ConversationSchema = new Schema(
       required: [true],
       minlength: [10],
     },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   },
   { timeStamps: true }
 );

@@ -36,9 +36,10 @@ async function findUser(req, res) {
           }
         );
         res.cookie("token", token);
+        console.log(user._id);
         res.json("Success");
       } else {
-        res.json({ userId: user._id });
+        res.json("The password is incorrect");
       }
     } else {
       res.json("No record exists");
@@ -50,18 +51,17 @@ async function findUser(req, res) {
 }
 
 async function verifyUser(req, res, next) {
-
-    const token = req.cookies.token
-    console.log(token)
-    if (!token) {
-        return res.json("The token not available")
-    } else {
-        jwt.verify(token, "jwt=secret-key", (err, decoded) => {
-            if (err) return res.json("Token is wrong")
-            req.email = decoded.email
-            next()
-        })
-    }
+  const token = req.cookies.token;
+  console.log(token);
+  if (!token) {
+    return res.json("The token not available");
+  } else {
+    jwt.verify(token, "jwt-secret-key", (err, decoded) => {
+      if (err) return res.json("Token is wrong");
+      req.id = decoded.id;
+      next();
+    });
+  }
 }
 
 export { createUser, findUser, verifyUser };
