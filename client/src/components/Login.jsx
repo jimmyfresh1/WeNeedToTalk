@@ -10,6 +10,7 @@ const Login = (props) => {
 
   const { handleLogin } = props;
 
+  axios.defaults.withCredentials = true
   const handleSubmit = (e) => {
     e.preventDefault()
     const tempObject = { login, password }
