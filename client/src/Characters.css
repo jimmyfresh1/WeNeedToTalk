@@ -304,7 +304,7 @@
 }
 
 .quote {
-  font-size: 23px;
+  font-size: 1.2em;
 }
 .bottom-half {
   grid-column: 1/4;
@@ -313,6 +313,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   overflow: scroll;
+  font-size: 1rem;
 }
 .bottom-half-tsundere {
   background: radial-gradient(
