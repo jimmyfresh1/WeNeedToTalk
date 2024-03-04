@@ -2,11 +2,11 @@
   background-color: black;
 }
 .loginBackground {
-  background-image: url("./assets/lakeside.png"); /* Adjust the path as needed */
-  height: 100vh; /* Or whatever fits your design */
+  background-image: url("./assets/lakeside.png");
+  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; /* Or 'contain' depending on what you need */
+  background-size: cover;
 }
 .login {
   grid-column: 8/13;

@@ -97,12 +97,12 @@ const TsundereHome = () => {
           </div>
           <div className="bottom-half bottom-half-tsundere">
             <div className="tsundere-blurb blurb ">
-              <div className="date-and-title">
+              <div className="date-and-title" id="tsundere-date">
                 <h2>Oct. 7 199X </h2>
                 <h2>Maybe it's bothersome</h2>
               </div>
 
-              <p>
+              <p id="tsundere-message">
                 Maybe it's not. But in life you still have to try. Sometimes I
                 hate how harsh I am on others when I know that I need to put in
                 the effort myself. That's why my message is to keep trying no

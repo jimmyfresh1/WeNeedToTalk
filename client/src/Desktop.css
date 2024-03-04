@@ -26,3 +26,12 @@
   grid-row-end: 9;
   cursor: url(./assets/select.png), pointer;
 }
+.icon4 {
+  height: 7em;
+  width: 5em;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 11;
+  grid-row-end: 12;
+  cursor: url(./assets/select.png), pointer;
+}

@@ -138,7 +138,13 @@
 .your-granddad-home p {
   font-size: 0.6em;
 }
+#grand-message {
+  font-size: 2em;
+}
 
+#tsundere-message {
+  font-size: 1.2em;
+}
 .detective {
   font-weight: 800;
   background-color: rgb(90, 60, 22);
@@ -234,7 +240,7 @@
 }
 
 .socrates p {
-  font-size: 0.5em;
+  font-size: 0.6em;
 }
 #socrates-choose {
   font-size: 1em;
@@ -330,6 +336,11 @@
     rgba(127, 77, 255, 0.676) 100%
   );
   border-radius: 2em 2em 0 0;
+  font-size: 1.3em;
+}
+
+#tsundere-date {
+  font-size: 1.2em;
 }
 
 .bottom-half-machine {

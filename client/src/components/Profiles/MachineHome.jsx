@@ -67,7 +67,7 @@ const MachineHome = () => {
         >
           {" "}
           <div className="bio">
-            <h3>Alias: ManInTheMachnie</h3>
+            <h3>Alias: ManInTheMachine</h3>
             <h4>Real Name: Nothing is real</h4>
             <h4>Status: Enlightened</h4>
             <h4>Favorite foods: Nibbles and bits?</h4>

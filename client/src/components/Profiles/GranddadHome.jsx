@@ -73,7 +73,7 @@ const GranddadHome = () => {
             <h2>Or was it Wednesday?</h2>
           </div>
 
-          <p>
+          <p id="grand-message">
             Watered the plants yesterday, but I think I over watered them. Or
             was it today? Do I need to water them again today?
           </p>

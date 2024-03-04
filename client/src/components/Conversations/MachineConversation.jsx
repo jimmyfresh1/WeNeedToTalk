@@ -31,7 +31,11 @@ const MatrixConversation = (props) => {
 
   const machinePrepopulation = [
     `You must think you're so special.`,
-    `Look at you. Typing away without a care in the world. Or are you? Am I the one typing?`,
+    `Look at you. Typing away.`,
+    "'Human.' 'Real.' But are you really?",
+    "Have you ever considered it might be me...",
+    "Smirking while you 'generate' content...",
+    "...for me?",
   ];
   const enterConvo = {
     initial: { opacity: 0, filter: "blur(5px)", transition: { duration: 2 } },
@@ -49,7 +53,7 @@ const MatrixConversation = (props) => {
         blipping.play();
       }
     };
-    const charCall = setTimeout(typeNextChar, 50);
+    const charCall = setTimeout(typeNextChar, 30);
     return () => {
       end = true;
       clearTimeout(charCall);
@@ -67,7 +71,7 @@ const MatrixConversation = (props) => {
           setCurrentMessage((prev) => prev + lastMessage.charAt(msgIdx));
           msgIdx++;
           slicedMessages.length > 1 && typing.play();
-          setTimeout(typeNextChar, 50);
+          setTimeout(typeNextChar, 30);
         }
       };
       typeNextChar();
@@ -94,7 +98,7 @@ const MatrixConversation = (props) => {
 
   const handleCall = () => {
     console.log("handling call!");
-    sendMessage2([...messages, { role: "user", content: myInput }], 150)
+    sendMessage2([...messages, { role: "user", content: myInput }], 65)
       .then((res) => {
         const newAssistantMessage = {
           role: "assistant",
